@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909194116) do
+ActiveRecord::Schema.define(version: 20130909194820) do
 
   create_table "schedules", force: true do |t|
     t.integer  "week"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20130909194116) do
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "city_abr"
   end
 
   create_table "users", force: true do |t|
