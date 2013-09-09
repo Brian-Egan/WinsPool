@@ -1,0 +1,265 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+.ffBody {
+	padding: auto;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.headerJumbo {
+	margin-top: 15px !important;
+	padding-top: 10px !important;
+}
+
+.textRight {
+	text-align: right;
+}
+
+.textLeft {
+	text-align: left;
+}
+
+.selectionPanel {
+	padding: 15px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.selectionPanel form {
+	margin-left: 12%;
+	margin-right: 12%;
+}
+
+.selectionPanel form input {
+	height: 30px;
+	font-size: 12px !important;
+}
+
+.availableHeader h3 {
+	margin-top: 10px;
+}
+
+.playerRow:hover {
+	cursor: pointer;
+	}
+
+.panel-heading {
+	border-bottom: 0px !important;
+}
+
+#playersAvail div table {
+	border-top: 1px;
+}
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+.whiteText {
+	color: white !important;
+}
+
+.btn-toolbar {
+	margin-top: 10px;
+}
+
+td.success {
+	background-color: rgba(223,240,216,.4) !important;
+}
+
+td.info {
+	background-color: rgba(102,153,204,.4) !important;
+}
+
+.info-btn {
+	text-align: center;
+	width: 20px;
+	color: white !important;
+	border-radius 2px;
+
+}
+
+.info-btn a {
+	color: white !important;
+	border-radius: 5px !important;
+	height: 18px;
+	/*background-color: rgba(102,153,204,.7) !important;*/
+	opacity: .4;
+	
+}
+
+.info-btn {
+	padding-left: 0px !important;
+}
+
+.vBtn {
+	opacity: .5;
+	border-radius: 15px !important;
+	margin-right: 5px !important;
+	font-size: 10px !important;
+	margin-left: 0px !important;
+}
+
+.tBox1 {
+/*	width: 30px !important;*/
+	max-width: 40px !important;
+	width: 38px !important;
+}
+
+.nBox {
+	max-width: 120px !important;
+	width: 130px !important;
+}
+
+.tBox2 {
+	width: 60px !important;
+}
+
+th {
+	font-size: 10px;
+}
+
+.headerPanel {
+	margin-left: -30px !important;
+}
+
+.tr-danger {
+	background: rgba(237, 175, 195, .3) !important;
+}
+
+.tr-success {
+	background: rgba(187, 223, 188, .3) !important;
+}
+
+.tr-warning {
+	background: rgba(246, 200, 180, .3) !important;
+}
+
+.tr-info {
+	background: rgba(182, 207, 236, .3) !important;
+}
+
+.tro-danger {
+	background: rgba(177, 115, 114,.2) !important;
+}
+
+.tro-success {
+	background: rgba(102, 186, 103,.2) !important;
+}
+
+.tro-warning {
+	background: rgba(242, 131, 85, .2) !important;
+}
+
+.tro-info {
+	background: rgba(90, 150, 217, .2) !important;
+}
+
+.centerText {
+	text-align: center;
+}
+
+.mTeamBtn {
+		margin-top: 10px;
+		margin-left: 5px;
+}
+
+.prBox {
+	width: 85px !important;
+}
+
+table {
+	table-layout: fixed;
+}
+
+.pPointsBtn {
+	margin-top: 10px;
+}
+
+#prevNext {
+	width: 100%;
+}
+
+
+#prevNext a.navBtn {
+	border-top: 1px solid red;
+	/*margin-left: 25px;*/
+	color: black !important;
+}
+
+#prevNext a:hover {
+	background: grey;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+.teamsPointsBtn {
+	color: white !important;
+	float: right !important;
+}
+
+.rndCol {
+	width: 5% !important;
+	border-right: 1px solid rgb(128, 128, 128);
+    border-right: 1px solid rgba(128, 128, 128, .25);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    margin-right: 2px;
+}
+
+.vAlignMiddle {
+	vertical-align: middle !important;
+}
+
+.rndNumRow {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	font-family: Raleway, Helvetica, Arial, sans-serif;
+	border-right: 1px solid rgb(128, 128, 128);
+    border-right: 1px solid rgba(128, 128, 128, .25);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    text-align: center;
+
+}
+
+.myTHead {
+	font-size 10px;
+	font-weight: bold;
+}
+
+.myTHeadRow {
+	font-size 10px;
+	font-weight: bold;
+}
+
+.dwlSummaryBtn {
+	color: white !important;
+	margin-top: -15px;
+	margin-bottom: 40px !important;
+}
+
+
+
