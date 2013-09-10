@@ -20,13 +20,13 @@ $(document).delegate "#draftSubmit", "click", ->
 
 
 $(document).delegate ".playerRow:not(:last-child)", "click", ->
-	playerName = $(this).data('name');
+	teamName = $(this).data('name');
 	$('#draftHeader').fadeOut('fast')
 	roundNumber = $('#roundNum').text();
 	pickNumber = $('#pickNum').text();
-	teamNum = $('#teamPicking').data('tid');
+	userNum = $('#teamPicking').data('tid');
 	$(this).fadeOut('fast');
-	subMit = {utf: "✓", name: playerName, round: roundNumber, pick: pickNumber, teamID: teamNum}
+	subMit = {utf: "✓", name: teamName, round: roundNumber, pick: pickNumber, userID: userNum}
 	$.post('/drafts', subMit, null, "script")
 
 $(document).delegate ".posBtn", "click", ->

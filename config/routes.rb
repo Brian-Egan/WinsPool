@@ -1,4 +1,6 @@
 WinsPool::Application.routes.draw do
+  resources :drafts
+
   resources :schedules
 
   resources :teams
@@ -9,7 +11,11 @@ WinsPool::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'drafts#index'
+
+  # match '/schedule/week/:id' => 
+
+  match '/schedule/updateScore' => 'schedules#score', :via => :get
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

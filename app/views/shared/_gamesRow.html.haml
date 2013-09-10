@@ -1,0 +1,41 @@
+%tr{:id => "GameRow#{s.id}"}
+	- @vTeam = Team.find(s.visitor_id)
+	- @hTeam = Team.find(s.home_id)
+	- if @vTeam.id == s.winning_team_id
+		- @vTeamText = "text-success"
+		- @hTeamText = "text-danger"
+	- elsif @hTeam.id == s.winning_team_id
+		- @hTeamText = "text-success"
+		- @vTeamText = "text-danger"
+	- elsif s.date < Time.now
+		- @vTeamText = "text-warning"
+		- @hTeamText = "text-warning"
+	- else
+		- @vTeamText = ""
+		- @hTeamText = ""
+	%td{:class => 'centerText'} #{s.week}
+	%td #{s.date.strftime('%a, %b %-d')}
+	%td #{s.date.strftime('%l:%M %p')}
+	%td
+		%h4{:class => "#{@vTeamText}"} #{@vTeam.city} #{@vTeam.name}
+	- if s.visitor_score.nil?
+		%td{:class => 'col-md-1 col-xs-1'}
+			%input.form-control{:id => "vTeam#{s.id}"}
+
+	- else
+		%td
+			%h4 #{s.visitor_score}
+	%td
+		%h4{:class => "#{@hTeamText}"} #{@hTeam.city} #{@hTeam.name}
+	- if s.home_score.nil?
+		%td{:class => 'col-md-1 col-xs-1'}
+			%input.form-control{:id => "hTeam#{s.id}"}  
+	- else
+		%td 
+			%h4 #{s.home_score}
+	- if s.winning_team_id.nil?
+		%td
+			%button.btn.btn-info.btn-sm.saveGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving..."} Save
+	- else
+		%td 
+			%button.btn.btn-caution.btn-sm.editGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving..."} Edit

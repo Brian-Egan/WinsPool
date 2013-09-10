@@ -1,0 +1,38 @@
+%table{:class => 'table table-striped table-condensed draftSummaryTable'}
+	%tr
+		%th{:class => 'rndCol centerText'} Rnd.
+		- @numUsrs = @usersList.count
+		- @usersList.each do |t|
+			%th{:class => 'centerText'}
+				=link_to t.owner, user_path(t.id)
+	-# %tr
+	-# 	%td{:class => 'rndCol myTHead centerText'} 
+	-# 		%small Proj.
+	-# 	- @usersList.each do |t|
+	-# 		%td{:class => 'centerText myTHeadRow'}
+	-# 			%small
+	-# 				= t.teams.count
+	- i = 1
+	- while i < @roundNum + 1
+		%tr
+			%td{:class => 'rndNumRow vAlignMiddle centerText'} #{i}
+			- if i.even?
+				- if i == @roundNum
+					- @blankCol = @drafters - @pickNum
+					- x = 1
+					- while x < @blankCol
+						%td
+						- x += 1
+				- @playersRev = Draft.where(:round => i).order("pick DESC")
+				- @playersRev.each do |d|
+					- p = Team.find(d.team_id)
+					%td{:class => 'centerText vAlignMiddle'}
+						%h6 #{p.name}
+			- else
+				- Draft.where(:round => i).each do |d|
+					- p = Team.find(d.team_id)
+					%td{:class => 'centerText vAlignMiddle'}
+						%h6 #{p.name}
+		- i += 1
+#dwlXLSlink
+	= link_to "Download Spreadsheet", "/active.xls", :class => 'btn btn-sm btn-success dwlSummaryBtn'

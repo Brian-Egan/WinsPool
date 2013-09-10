@@ -1,5 +1,24 @@
 class Team < ActiveRecord::Base
 
+has_one :draft
+has_one :user, :through => :draft
+
+
+	# def self.winz
+	# 	@wins = Schedule.where(:winning_team_id => self.id).count
+	# 	return @wins
+	# end
+
+	def self.avail
+		where(:taken => false)
+	end
+
+	def self.gone
+		where(:taken => true)
+	end
+
+	
+
 	# def self.game(wk)
 	# 	gm = Schedule.where(:visitor_id => self.id, :week => wk)
 

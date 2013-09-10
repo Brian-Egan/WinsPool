@@ -1,3 +1,36 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#UserRecord {
+	margin-left: 4.16%;
+	margin-right: 4.16%;
+	color: black;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+#userRecordTable {
+	margin-top: 0;
+	margin-bottom: 0;
+	height: 100%;
+	text-align: center;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+#userRecordTable table {
+	margin-bottom: 0px;
+
+}
+
+.recordHeader {
+	vertical-align: bottom;
+	height: 100%;
+}
+
+// #UserTeams {
+// 	margin-right: auto;
+// 	margin-left: auto;
+// }
