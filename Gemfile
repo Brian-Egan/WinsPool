@@ -59,7 +59,7 @@ gem 'heroku'
 gem 'will_paginate-bootstrap'
 gem 'will_paginate', '~> 3.0'
 
-# gem 'devise'
+gem 'devise'
 
 
 

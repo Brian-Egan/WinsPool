@@ -1,21 +1,52 @@
 WinsPool::Application.routes.draw do
+  devise_for :users, :skip => [:sessions]
+as :user do
+  get 'signin' => 'devise/sessions#new', :as => :new_user_session
+  post 'signin' => 'devise/sessions#create', :as => :user_session
+  match 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session,
+    :via => Devise.mappings[:user].sign_out_via
+  get 'signup' => 'devise/registrations#new'
+end
+
+
+
   resources :drafts
 
   resources :schedules
 
   resources :teams
 
-  resources :users
+# devise_scope :user do
+#     # get "login", :to => "MySessions#new"
+#    # post "mybooks" => "devise/sessions#create", :as => :user_session
+#     get "create", :to => 'devise/registrations#new'
+#     delete "/logout" => "devise/sessions#destroy"
+#     get '/login' => 'devise/sessions#new'
+#   #  delete "logout", :to => 'devise/sessions#destroy', :as => :destroy_user_session
+#   end
+
+# devise_scope :user do
+#    get "sign_in", :to => "devise/sessions#new"
+# end
+
+
+ # resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'drafts#index'
+  # root :to => 'drafts#index'
 
   # match '/schedule/week/:id' => 
 
   match '/schedule/updateScore' => 'schedules#score', :via => :get
+
+if @auth_user
+  root :to => 'schedules#index'
+else
+  root :to => 'drafts#index'
+end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
