@@ -4,7 +4,7 @@
 		- @numUsrs = @usersList.count
 		- @usersList.each do |t|
 			%th{:class => 'centerText'}
-				= t.owner
+				=link_to t.owner, user_path(t.id)
 	-# %tr
 	-# 	%td{:class => 'rndCol myTHead centerText'} 
 	-# 		%small Proj.
