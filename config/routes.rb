@@ -13,7 +13,11 @@ WinsPool::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'drafts#index'
 
-  # match '/schedule/week/:id' => 
+
+  match "/login" => "session#new", :via => :get
+  match "/login" => "session#login", :via => :post
+  match '/signup' => "users#new", :via => :get
+  match "/logout" => "session#destroy", :via => "get"
 
   match '/schedule/updateScore' => 'schedules#score', :via => :get
 

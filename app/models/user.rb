@@ -4,6 +4,8 @@ has_many :teams, :through => :drafts
 
 has_many :drafts
 
+has_secure_password
+
 	def self.teamz
 		self.drafts.each do |d|
 			return d.player_id

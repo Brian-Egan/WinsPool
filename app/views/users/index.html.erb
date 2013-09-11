@@ -15,7 +15,6 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
         <td><%= user.owner %></td>
         <td><%= user.draft_order %></td>
         <td><%= link_to 'Show', user %></td>
