@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912205813) do
+ActiveRecord::Schema.define(version: 20130912210404) do
 
   create_table "drafts", force: true do |t|
     t.integer  "round"
