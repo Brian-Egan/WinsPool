@@ -1,0 +1,9 @@
+#SessionBox.col-md-offset-2
+	%ul.nav.nav-tabs.col-md-10.sessionUL
+		%li.sessionnav.active.col-md-6
+			%a{:href => "/#"} 
+				%h2 Sign in
+		%li.sessionnav.col-md-6
+			%a{:href => "/#"} 
+				%h2.text-right Sign up
+= render 'session/new'

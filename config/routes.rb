@@ -11,15 +11,21 @@ WinsPool::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'drafts#index'
+  if @auth_user
+  root :to => 'drafts#index'
+  else
+  root :to => 'session#new'
+  end
 
 
   match "/login" => "session#new", :via => :get
   match "/login" => "session#login", :via => :post
-  match '/signup' => "users#new", :via => :get
+  match "/signup" => "users#new", :via => :get
   match "/logout" => "session#destroy", :via => "get"
 
   match '/schedule/updateScore' => 'schedules#score', :via => :get
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

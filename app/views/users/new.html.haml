@@ -1,0 +1,14 @@
+#SessionBox.col-md-offset-2
+	%ul.nav.nav-tabs.col-md-10.sessionUL
+		%li.sessionnav.col-md-6
+			%a{:href => "/#"} 
+				%h2.text-center Sign in
+		%li.sessionnav.active.col-md-6
+			%a{:href => "/#"} 
+				%h2.text-center Sign up	
+
+-# = render 'form'
+#AccountDiv.col-md-offset-2.col-md-9.col-xs-12.col-xm-12.form-horizontal
+	= render "shared/newUserTwo"
+
+

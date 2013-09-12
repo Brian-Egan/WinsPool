@@ -1,0 +1,27 @@
+#AccountDiv.col-md-offset-2.col-md-10.col-xs-12.col-xm-12.form-horizontal
+	= form_for(@user) do |f|
+		- if @user.errors.any?
+		#error_explanation
+			%h2
+			= pluralize(@user.errors.count, "error")
+			prohibited this user from being saved:
+			%ul
+			- @user.errors.full_messages.each do |msg|
+				%li= msg
+		.form-group
+			%h4.col-md-2.control-label.text-center Name:
+			.col-md-8
+				= f.text_field :owner, nil, :class => 'form-control col-md-8'
+		.form-group
+			%h4.col-md-2.control-label.text-center Email:
+			.col-md-8
+				= f.text_field :email, nil, :class => 'form-control col-md-8'
+		.form-group
+			%h4.col-md-2.control-label.text-center{:for => "inputPassword1"} Password:
+			.col-md-8
+				= f.password_field :password, nil, :class => 'form-control', :autocomplete => 'off'
+		.form-group
+			%h4.col-md-2.control-label.text-center{:for => "inputPassword1"} Confirm Password:
+			.col-md-8
+				= f.password_field :password_confirmation, nil, :class => 'form-control', :autocomplete => 'off'
+		= f.submit "Sign Up", :class => "btn btn-primary btn-large col-md-2 col-md-offset-8 col-xs-12 col-sm-12 usrSubmitBtn"

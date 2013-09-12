@@ -1,0 +1,43 @@
+= form_for(@user) do |f|
+	- if @user.errors.any?
+		#error_explanation
+			%h2
+				= pluralize(@user.errors.count, "error")
+				prohibited this user from being saved:
+			%ul
+				- @user.errors.full_messages.each do |msg|
+					%li= msg
+	/
+	-# .field
+	-# 	= f.label :owner
+	-# 	%br
+	-# 		= f.text_field :owner
+	.form-group
+		%h4.col-md-2.control-label.text-center Name:
+		-# = f.label "Name: ", :class => "col-md-2 col-xs-3 control-label text-center"
+		.col-md-8.col-xs-9
+			= f.text_field :owner, :class => 'form-control col-md-8 col-xs-9'
+	.form-group
+		%h4.col-md-2.control-label.text-center Email:
+		.col-md-8.col-xs-9
+			= f.email_field :email, :class => 'form-control col-md-8 col-xs-9'
+	.form-group
+		%h4.col-md-2.control-label.text-center Password:
+		.col-md-8.col-xs-9
+			= f.password_field :password, :class => 'form-control col-md-8 col-xs-9'
+	.form-group
+		%h4.col-md-2.control-label.text-center Confirm Password:
+		.col-md-8.col-xs-9
+			= f.password_field :password_confirmation, :class => 'form-control col-md-8 col-xs-9'
+	-# .field
+	-# 	= f.label :email
+	-# 	%br
+	-# 		= f.email_field :email
+	-# .field
+	-# 	= f.label :password
+	-# 	= f.password_field :password, :autocomplete => 'off'
+	-# .field
+	-# 	= f.label :password_confirmation
+	-# 	= f.password_field :password_confirmation, :autocomplete => 'off'
+	.actions
+		= f.submit "Sign Up", :class => "btn btn-primary btn-large col-md-2 col-md-offset-8 col-xs-12 col-sm-12 usrSubmitBtn"

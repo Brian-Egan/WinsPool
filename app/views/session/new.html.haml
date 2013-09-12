@@ -1,8 +1,24 @@
-%h2 Sign in
-= form_tag '/login' do
-  Email:
-  ￼
-  \#{text_field_tag 'email'}
-  Password:
-  \#{password_field_tag 'password'}
-  \#{submit_tag 'Log in'}
+#SessionBox.col-md-offset-2
+	%ul.nav.nav-tabs.col-md-10.sessionUL
+		%li.sessionnav.active.col-md-6#SignInTab
+			%a{:href => "/#", :'data-no-turbolink' => ""} 
+				%h2 Sign in
+		%li.sessionnav.col-md-6#SignUpTab
+			%a{:href => "/#", :'data-no-turbolink' => ""} 
+				%h2.text-right Sign up
+#AccountDiv.col-md-offset-2.col-md-9.col-xs-12.col-xm-12.form-horizontal.newSessionBox		
+	= render 'shared/newSession'
+#AccountDiv.col-md-offset-2.col-md-9.col-xs-12.col-xm-12.form-horizontal.newUserBox
+	-# = render "shared/newUserTwo"
+
+-# #AccountDiv.col-md-offset-2.col-md-10.col-xs-12.col-xm-12.form-horizontal
+-# 	= form_tag '/login' do
+-# 		.form-group
+-# 			%h4.col-md-2.control-label.text-center Email:
+-# 			.col-md-8
+-# 				= text_field_tag :email, nil, :class => 'form-control col-md-8'
+-# 		.form-group
+-# 			%h4.col-md-2.control-label.text-center{:for => "inputPassword1"} Password:
+-# 			.col-md-8
+-# 				= password_field_tag :password, nil, :class => 'form-control'
+-# 		= submit_tag "Sign In", :class => "btn btn-primary btn-large col-md-2 col-md-offset-8 col-xs-12 col-sm-12 usrSubmitBtn"

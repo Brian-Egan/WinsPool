@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+
+        respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /users/1/edit

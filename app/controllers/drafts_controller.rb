@@ -106,7 +106,13 @@ class DraftsController < ApplicationController
 
     @usersList = User.all.order("draft_order ASC").all
 
+
+    if Draft.count > 0 
+      UserMailer.registration_confirmation(@usr).deliver
+    end
+    
      respond_to do |format|
+
           format.html
           format.js
           # format.csv { render text: @drafts.to_csv  }
