@@ -1,0 +1,14 @@
+%p #{@user.owner},
+-# %br
+%p It's your turn in the NFL Wins Pool draft! Click on the link below to be taken to the draft, once the page has loaded simply click/tab on the team you want and they'll be drafted. 
+-# %br
+%p <b> Be careful not to accidently click on a team, as a single click will save them to your roster! </b>
+-# %br
+= link_to "http://WinsPool.heroku.com/drafts", "http://WinsPool.heroku.com/drafts"
+-# %br
+%p If you're unable to access the draft site for whatever reason, please look at the list of available teams below & forward this email to <a href="mailto:bfegan@gmail.com?Subject=My Draft Pick" target="_top"> Brian </a> with your pick.
+
+%h4 <b> Here's a look at the teams still available:</b>
+%ul
+	- @teams.each do |t|
+		%li #{t.city} #{t.name}

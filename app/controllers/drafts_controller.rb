@@ -107,8 +107,8 @@ class DraftsController < ApplicationController
     @usersList = User.all.order("draft_order ASC").all
 
 
-    if Draft.count > 0 
-      UserMailer.registration_confirmation(@usr).deliver
+    if Draft.count > 0 && @auth_user.id = @usr.id
+      UserMailer.draft_notification(@usr).deliver
     end
     
      respond_to do |format|

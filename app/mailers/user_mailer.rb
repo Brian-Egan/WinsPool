@@ -6,4 +6,10 @@ class UserMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "Registered")
   end
 
+  def draft_notification(user)
+  	@user = user
+  	@teams = Team.all
+    mail(:to => user.email, :subject => "Your turn to draft!")
+  end
+
 end

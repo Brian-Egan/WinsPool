@@ -23,6 +23,8 @@ WinsPool::Application.routes.draw do
   match "/signup" => "users#new", :via => :get
   match "/logout" => "session#destroy", :via => "get"
 
+  match "/test" => "teams#test", :via => "get"
+
   match '/schedule/updateScore' => 'schedules#score', :via => :get
 
 

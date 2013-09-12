@@ -61,6 +61,11 @@ class TeamsController < ApplicationController
     end
   end
 
+  def test
+    @usr = @auth_user
+    UserMailer.draft_notification(@usr).deliver
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
