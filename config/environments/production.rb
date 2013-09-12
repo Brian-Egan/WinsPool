@@ -78,18 +78,22 @@ WinsPool::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-     config.action_mailer.smtp_settings = {
-      address: "smtp.gmail.com",
-      port: 587,
-      domain: "winspool.heroku.com",
-      authentication: "plain",
-      enable_starttls_auto: true,
-      user_name: 'footballwinspool@gmail.com',
-      password: 'qeewoyjinyglohmg'
-    } 
 
-    config.action_mailer.default_url_options = {
-      host: "winspool.herokuapp.com",
-      # port: 3000
-    }
+    # ActionMailer::Base.smtp_settings = {
+    #   :address  => "smtp.gmail.com",
+    #   :port  => 587,
+    #   :user_name  => "foo@bar.com",
+    #   :password  => "foobar",
+    #   :authentication  => :plain,
+    #   :enable_starttls_auto => true
+    # }
+
+    config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+
+    # config.action_mailer.default_url_options = {
+    #   host: "winspool.herokuapp.com",
+    #   # port: 3000
+    # }
 end
