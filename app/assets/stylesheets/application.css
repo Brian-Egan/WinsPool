@@ -273,4 +273,8 @@ table {
 	opacity: .85;
 }
 
+.table-opacity-low {
+	opacity: .8;
+}
+
 

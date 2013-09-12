@@ -51,6 +51,8 @@ class DraftsController < ApplicationController
         # end
 
         @upNext = PickOrder.find(@pickNum)[@tms]
+        @dn = Draft.count + 1
+        @upNext = PickOrder.find(@dn)[@tms]
         @usr = User.where(:draft_order => @upNext).take
         @userID = @usr.id
 

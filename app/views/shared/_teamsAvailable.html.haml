@@ -1,23 +1,29 @@
+- if @auth_user.id == @userName.id
+	- @hover = "table-hover"
+- else
+	- @hover = "table-opacity-low"
+- @hover = "table-hover"
+
 %div{:class => 'col-md-3'}
-	%table{:class => 'table table-striped table-hover col-md-3'}
+	%table{:class => @hover + ' table table-striped col-md-3'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams1.each do |t|
 			= render :partial => 'shared/teamRow', :locals => {:t => t}
 %div{:class => 'col-md-3'}
-	%table{:class => 'table table-striped table-hover col-md-3'}
+	%table{:class => @hover + ' table table-striped =col-md-3'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams2.each do |t|
 			= render :partial => 'shared/teamRow', :locals => {:t => t}
 %div{:class => 'col-md-3'}
-	%table{:class => 'table table-striped table-hover col-md-3'}
+	%table{:class => @hover + ' table table-striped =col-md-3'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams3.each do |t|
 			= render :partial => 'shared/teamRow', :locals => {:t => t}
 %div{:class => 'col-md-3'}
-	%table{:class => 'table table-striped table-hover col-md-3'}
+	%table{:class => @hover + ' table table-striped =col-md-3'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams4.each do |t|

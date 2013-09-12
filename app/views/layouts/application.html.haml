@@ -8,6 +8,7 @@
 	%body
 		- if @auth_user
 			= render 'layouts/navbar'
+			-# %p Auth user is #{@auth_user.owner}, ID: #{@auth_user.id}
 			.myBody
 		- else
 			-# %h1.ui-title TitlePool
@@ -25,6 +26,6 @@
 			-# 	%p.notice #{notice}
 			-# 	%p.alert #{alert}
 			-# %p.alert-info #{params.inspect}
-			-# %p Auth user is #{@auth_user}
+			
 		= yield
 	
