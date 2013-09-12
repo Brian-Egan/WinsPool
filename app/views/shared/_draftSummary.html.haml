@@ -34,10 +34,10 @@
 
 %table{:class => 'table table-striped table-condensed draftSummaryTable', :id => 'horzTable'}
 	%tr
-		%th{:class => 'rndCol centerText'} Rnd.
+		%th{:class => 'rndCol centerText col-xs-1'} Rnd.
 		- @numUsrs = @usersList.count
 		- @usersList.each do |t|
-			%th{:class => 'centerText'}
+			%th{:class => 'centerText col-xs-1'}
 				=link_to t.owner, user_path(t.id)
 	%tr	
 	- i = 1
