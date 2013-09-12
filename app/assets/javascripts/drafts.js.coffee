@@ -30,9 +30,6 @@ $(document).delegate ".dSumTeam", "click", ->
 	# $.get('/team/modal', subMit, null, 'script')
 
 
-
-
-
 $(document).delegate ".playerRow", "click", ->
 	teamName = $(this).data('name');
 	$('#draftHeader').fadeOut('fast')
@@ -42,6 +39,19 @@ $(document).delegate ".playerRow", "click", ->
 	$(this).fadeOut('fast');
 	subMit = {utf: "✓", name: teamName, round: roundNumber, pick: pickNumber, userID: userNum}
 	$.post('/drafts', subMit, null, "script")
+
+
+
+
+# $(document).delegate ".playerRow", "click", ->
+# 	teamName = $(this).data('name');
+# 	$('#draftHeader').fadeOut('fast')
+# 	roundNumber = $('#roundNum').text();
+# 	pickNumber = $('#pickNum').text();
+# 	userNum = $('#teamPicking').data('tid');
+# 	$(this).fadeOut('fast');
+# 	subMit = {utf: "✓", name: teamName, round: roundNumber, pick: pickNumber, userID: userNum}
+# 	$.post('/drafts', subMit, null, "script")
 
 $(document).delegate ".posBtn", "click", ->
 	playerPos = $(this).data('pos');

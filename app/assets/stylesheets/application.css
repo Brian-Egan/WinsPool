@@ -295,3 +295,9 @@ table {
 	cursor: pointer;
 }
 
+.playerRow:hover {
+	background-color: inherit;
+	text-decoration: none !important;
+	color: black;
+}
+
