@@ -14,6 +14,9 @@ class SessionController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      user.sign_in_count += 1
+      user.last_sign_in_at = Time.now
+      user.save
       redirect_to user_path(user.id)
     else
       @user = User.new

@@ -1,5 +1,5 @@
 -if @auth_user
-	- if @auth_user.id == @userName.id || @auth_user.id == 6
+	- if @auth_user.id == @userName.id || @auth_user.id == 2
 		%tr{}
 			%td.centerText
 				%a{:href => "#", :class => 'playerRow', :'data-name' => t.city_abr} #{t.city} #{t.name}
