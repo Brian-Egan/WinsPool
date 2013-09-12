@@ -12,9 +12,9 @@ WinsPool::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   if @auth_user
-  root :to => 'drafts#index'
+    root :to => 'drafts#index'
   else
-  root :to => 'session#new'
+    root :to => 'session#new'
   end
 
 
