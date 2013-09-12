@@ -7,26 +7,26 @@
 	- @hover = "table-opacity-low"
 -# - @hover = "table-hover"
 
-%div{:class => 'col-md-3'}
-	%table{:class => @hover + ' table table-striped col-md-3'}
+%div{:class => 'col-md-3 col-sm-6 col-xs-12'}
+	%table{:class => @hover + ' table table-striped col-md-3 col-sm-6 col-xs-12'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams1.each do |t|
 			= render :partial => 'shared/teamRow', :locals => {:t => t}
-%div{:class => 'col-md-3'}
-	%table{:class => @hover + ' table table-striped =col-md-3'}
+%div{:class => 'col-md-3 col-sm-6 col-xs-12'}
+	%table{:class => @hover + ' table table-striped col-md-3'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams2.each do |t|
 			= render :partial => 'shared/teamRow', :locals => {:t => t}
-%div{:class => 'col-md-3'}
-	%table{:class => @hover + ' table table-striped =col-md-3'}
+%div{:class => 'col-md-3 col-sm-6 col-xs-12'}
+	%table{:class => @hover + ' table table-striped col-md-3'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams3.each do |t|
 			= render :partial => 'shared/teamRow', :locals => {:t => t}
-%div{:class => 'col-md-3'}
-	%table{:class => @hover + ' table table-striped =col-md-3'}
+%div{:class => 'col-md-3 col-sm-6 col-xs-12'}
+	%table{:class => @hover + ' table table-striped col-md-3'}
 		-# %tr
 		-# 	%th{:class => 'nBox'} Name
 		- @teams4.each do |t|

@@ -17,6 +17,20 @@ $(document).delegate "#draftSubmit", "click", ->
   $.post('/drafts', subMit, null, "script")
 
 
+$(document).delegate ".dSumTeam", "click", ->
+	teamNum = $(this).data('userid');
+	# alert teamNum
+	subMit = {utf: "✓", userID: teamNum}
+	$.get('/usermodal', subMit, null, 'script')
+	# mBody = $('#aModalBody')
+	# $('#aTeamName').empty()
+	# mBody.empty()
+	# console.log "About to get server response"
+	# subMit = {utf: "✓", teamID: teamNum}
+	# $.get('/team/modal', subMit, null, 'script')
+
+
+
 
 
 $(document).delegate ".playerRow", "click", ->

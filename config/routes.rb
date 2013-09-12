@@ -28,6 +28,9 @@ WinsPool::Application.routes.draw do
   match '/schedule/updateScore' => 'schedules#score', :via => :get
 
 
+  match '/usermodal' => 'users#modal', :via => :get
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

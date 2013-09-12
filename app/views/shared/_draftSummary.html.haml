@@ -37,8 +37,9 @@
 		%th{:class => 'rndCol centerText col-xs-1'} Rnd.
 		- @numUsrs = @usersList.count
 		- @usersList.each do |t|
-			%th{:class => 'centerText col-xs-1'}
-				=link_to t.owner, user_path(t.id)
+			%th{:class => 'centerText col-xs-1 dSumTeam', :'data-userID' => "#{t.id}"} #{t.owner}
+			-# =link_to t.owner, user_path(t.id)
+			
 	%tr	
 	- i = 1
 	- while i < @roundNum + 1
