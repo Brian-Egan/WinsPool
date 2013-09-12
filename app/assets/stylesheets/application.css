@@ -22,7 +22,11 @@
 .headerJumbo {
 	margin-top: 15px !important;
 	padding-top: 10px !important;
-	max-height: 120px !important;
+	max-height: 140px !important;
+}
+
+#teamPicking {
+	margin-top: 0px !important;
 }
 
 .textRight {
