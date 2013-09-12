@@ -19,7 +19,7 @@ $(document).delegate "#draftSubmit", "click", ->
 
 
 
-$(document).delegate ".playerRow:not(:last-child)", "click", ->
+$(document).delegate ".playerRow", "click", ->
 	teamName = $(this).data('name');
 	$('#draftHeader').fadeOut('fast')
 	roundNumber = $('#roundNum').text();
@@ -71,3 +71,5 @@ $(document).delegate "#sortPoints", "click", ->
 		subMit = {utf: "✓", order: "points"}
 	console.log "Points!"
 	$.get('/playerssort', subMit, null, 'script')
+
+$(document).onload

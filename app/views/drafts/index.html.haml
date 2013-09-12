@@ -8,32 +8,14 @@
 	-# 		%input{:type => 'text', :class => 'col-md-1 col-md-offset-1', :placeholder => 'Pos', :id => 'pPos', :'data' => { :'pos' => 'position'}}
 	-# 		%button{:type => 'submit', :class => 'btn btn-default btn-sm col-md-offset-1 col-md-2', :id => 'draftSubmit'} Submit
 
+-# %p @tms: #{@tms}, @upNext: #{@upNext}, @pickNum: #{@pickNum}, @usr: #{@usr.id}, @userID: #{@userID}, Ovr Pick #: #{@dn}
+
 #AvailPlayers{:class => 'panel panel-success'}
 	%div{:class => 'panel-heading availableHeader row'}
 		%h3{:class => 'col-md-3'} Teams Available
-		%hr
-		-# %a{:'data-toggle' => 'modal', :href => '#myTeam', :class => 'btn btn-default btn-sm col-md-1 mTeamBtn'} My Team
-		-# %a{:'data-toggle' => 'modal', :href => '#jbTeam', :class => 'btn btn-default btn-sm col-md-1 mTeamBtn'} John's Team
-		-# %div{:class => 'btn-toolbar pull-right'}
-		-# 	%div{:class => 'btn-group'}
-		-# 		%button{:class => 'btn btn-sm btn-default posBtn', :'data-pos' => 'QB', :id => 'QB'} QB
-		-# 		%button{:class => 'btn  btn-sm btn-default posBtn', :'data-pos' => 'RB', :id => 'RB'} RB
-		-# 		%button{:class => 'btn btn-sm  btn-default posBtn', :'data-pos' => 'WR', :id => 'WR'} WR
-		-# 		%button{:class => 'btn btn-sm  btn-default posBtn', :'data-pos' => 'TE', :id => 'TE'} TE
-		-# 		%button{:class => 'btn btn-sm  btn-default posBtn', :'data-pos' => 'PK', :id => 'PK'} K
-		-# 		%button{:class => 'btn btn-sm  btn-default posBtn', :'data-pos' => 'DT', :id => 'DT'} Def
-		-# 		%button{:class => 'btn btn-sm  btn-default posBtn', :'data-pos' => 'AllOff', :id => 'AllOff'} All Off.
-		-# 	%div{:class => 'btn-group'}
-		-# 		%button{:class => 'btn btn-sm  btn-info posBtn', :'data-pos' => 'All', :id => 'All'} Show All
-		-# 		%div{:class => 'btn-toolbar'}
-		-# %div{:class => 'btn-group pPointsBtn col-md-offset-1'}
-		-# 	%button{:class => 'btn btn-sm btn-default pointsBtn active', :'data-pos' => 'season', :id => 'season'} Season
-		-# 	%button{:class => 'btn  btn-sm btn-default pointsBtn', :'data-pos' => 'weekly', :id => 'weekly'} Weekly
-
 
 	%div{:class => 'row', :id => 'teamsAvail'}
 		= render :partial => 'shared/teamsAvailable'
-	%hr
 
 	
 
