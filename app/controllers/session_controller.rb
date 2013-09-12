@@ -10,7 +10,10 @@ class SessionController < ApplicationController
 	
    def login
     # raise params.inspect
-    user = User.find_by_email(params[:email])
+    unless User.find_by_email(params[:email]).nil?
+      user = User.find_by_email(params[:email])
+    end
+
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
