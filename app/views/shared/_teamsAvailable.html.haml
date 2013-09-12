@@ -1,5 +1,8 @@
-- if @auth_user.id == @userName.id || @auth_user.id == 2
-	- @hover = "table-hover"
+- if @auth_user
+	- if @auth_user.id == @userName.id || @auth_user.id == 2
+		- @hover = "table-hover"
+	- else
+		- @hover = "table-opacity-low"
 - else
 	- @hover = "table-opacity-low"
 -# - @hover = "table-hover"
