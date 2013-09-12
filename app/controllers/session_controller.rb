@@ -12,8 +12,6 @@ class SessionController < ApplicationController
     # raise params.inspect
     user = User.find_by_email(params[:email])
 
-
-
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to user_path(user.id)
