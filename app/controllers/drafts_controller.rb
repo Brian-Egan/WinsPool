@@ -56,11 +56,20 @@ class DraftsController < ApplicationController
         #   @teamID = (@lastPick.team_id - 1)
         # end
 
+      if Draft.count > PickOrder.where("teams_9").count
+        @upNext = 1
+        @dn = Draft.count + 1
+        @upNext = 1
+        @usr = User.find(2)
+        @userID = @usr.id
+        @draftOver = true
+      else
         @upNext = PickOrder.find(@pickNum)[@tms]
         @dn = Draft.count + 1
         @upNext = PickOrder.find(@dn)[@tms]
         @usr = User.where(:draft_order => @upNext).take
         @userID = @usr.id
+      end
 
   #===== Change below for number of players!=====
         if @userID > 12

@@ -1,19 +1,24 @@
-#OnTheClock.glow-alert
-		%h4.text-center You are on the clock
+- if @draftOver
+		%h3.text-center The draft is over! Check back soon for league standings & updates!
+		%br
+		%h4.text-left Draft Summary: 
+- else
+		#OnTheClock.glow-alert
+				%h4.text-center You are on the clock
 
-.jumbotron.headerJumbo
-		.row#draftHeader
-				= render :partial => 'shared/draftHeader'
-
--# %p.glow_text Auth_user ID: #{@auth_user.id}, Auth Name: #{@auth_user.owner}, userName.id: #{@userName.id}, 
+		.jumbotron.headerJumbo
+				.row#draftHeader
+						= render :partial => 'shared/draftHeader'
 
 
-#AvailPlayers{:class => 'panel panel-success'}
-		%div{:class => 'panel-heading availableHeader row'}
-				%h3{:class => 'col-md-3'} Teams Available
 
-		%div{:class => 'row', :id => 'teamsAvail'}
-				= render :partial => 'shared/teamsAvailable'
+
+		#AvailPlayers{:class => 'panel panel-success'}
+				%div{:class => 'panel-heading availableHeader row'}
+						%h3{:class => 'col-md-3'} Teams Available
+
+				%div{:class => 'row', :id => 'teamsAvail'}
+						= render :partial => 'shared/teamsAvailable'
 
 		
 
