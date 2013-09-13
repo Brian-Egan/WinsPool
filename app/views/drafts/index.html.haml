@@ -10,7 +10,7 @@
 				.row#draftHeader
 						= render :partial => 'shared/draftHeader'
 		- if Rails.env.development?
-			%p User ID: #{@usr.id}, Draft order: #{@usr.draft_order}, Pick ID: #{@pickNum}, Ovr. Pick: #{@pickNum + ((@roundNum-1)*10)}, Draft Num: #{Draft.count}
+				%p User ID: #{@usr.id}, Draft order: #{@usr.draft_order}, Pick ID: #{@pickNum}, Ovr. Pick: #{@pickNum + ((@roundNum-1)*10)}, Draft Num: #{Draft.count}
 
 
 
