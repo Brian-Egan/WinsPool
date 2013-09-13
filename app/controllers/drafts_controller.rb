@@ -56,7 +56,7 @@ class DraftsController < ApplicationController
         #   @teamID = (@lastPick.team_id - 1)
         # end
 
-      if Draft.count > PickOrder.where("teams_9").count
+      if Draft.count >= PickOrder.where(@tms).count
         @upNext = 1
         @dn = Draft.count + 1
         @upNext = 1
