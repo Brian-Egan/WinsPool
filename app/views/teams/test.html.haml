@@ -1,1 +1,15 @@
 %h3 Yo do!
+
+%h5 Here are your choices:
+
+%a.btn.btn-primary.btn-large.col-md-3.testJSBtn{:href => "#", :'data-confirm' => 'Do you REALLY want to?'} Click to see available teams
+
+= button_to "See available teams", { class: "btn btn-info btn-large col-md-3 testJSBtn" }, data: { confirm: "Do you really want to see them?" }
+
+-# = button_to
+
+-# = button_to "Delete Image", { action: "delete", id: @image.id },
+-#                                 method: :delete, data: { confirm: "Are you sure?" }
+
+%br
+#AvailableTeams

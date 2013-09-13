@@ -1,0 +1,46 @@
+.modal-dialog
+	.modal-content
+		.modal-header
+			%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+			%h4.modal-title Success!
+		.modal-body
+			You've successfully drafted the #{t.city} #{t.name}!
+			%br
+			%br
+			-# Click here to send an email to #{u.owner}, who's now on the clock.
+
+			%a{:href => "mailto:#{u.email}?cc=bfegan@gmail.com&subject=Your turn to draft&body=Hi #{u.owner}, it's your turn to draft! \r\n Follow this link to make your pick: http://winspool.heroku.com/drafts", :class => 'nextDraftLink' } Click here to send an email to #{u.owner}, who's now on the clock.
+
+			-# <a href="mailto:test@test.test?body=The message's first paragraph.%0A%0aSecond paragraph.%0A%0AThird Paragraph.%0A%0ALink goes here">Link text goes here</a>
+
+			-# ->setBody("Did you request a password reset for your account?\r\n\r\nIf yes, click here:\r\nhttp://www.website.com", 'text/plain');
+			-# %table{:class => 'table table-striped table-condensed'}
+			-# 	- @y = 1
+			-# 	%tr
+			-# 		%th{:class => 'col-md-1'} Position
+			-# 		%th{:class => 'col-md-1'} Slots
+			-# 		%th{:class => 'col-md-1'} Drafted
+			-# 		%th{:class => 'col-md-5'} Players
+			-# 		%th{:class => 'col-md-1'} Proj. Points
+			-# 		%th{:class => 'col-md-1'} Proj. Weekly
+			-# 	= render :partial => "shared/teamPosRow", :locals => {:p => @myQBs, :name => "QB", :pa => @posAvail, :y => @y }
+			-# 	- @y += 1
+			-# 	= render :partial => "shared/teamPosRow", :locals => {:p => @myRBs, :name => "RB", :pa => @posAvail, :y => @y }
+			-# 	- @y += 1
+			-# 	= render :partial => "shared/teamPosRow", :locals => {:p => @myWRs, :name => "WR", :pa => @posAvail, :y => @y }
+			-# 	- @y += 1
+			-# 	= render :partial => "shared/teamPosRow", :locals => {:p => @myTEs, :name => "TE", :pa => @posAvail, :y => @y }
+			-# 	- @y += 1
+			-# 	= render :partial => "shared/teamPosRow", :locals => {:p => @myPKs, :name => "PK", :pa => @posAvail, :y => @y }
+			-# 	- @y += 1
+			-# 	= render :partial => "shared/teamPosRow", :locals => {:p => @myDefs, :name => "Def", :pa => @posAvail, :y => @y }
+			-# 	- @y += 1
+			-# 	%tr
+			-# 		%th{:class => 'col-md-1'} Total
+			-# 		%th #{@posAvail["Total"]}
+			-# 		%th #{@myPlayers.count}
+			-# 		%th 
+			-# 		%th
+			-# 			= SumPosPoints(@myPlayers, "rank3")
+			-# 		%th
+			-# 			= CalcWeeklyPoints(@posPoints, 12)

@@ -301,3 +301,60 @@ table {
 	color: black;
 }
 
+.glow_text {
+    -webkit-transition: text-shadow 1s linear;
+    -moz-transition: text-shadow 1s linear;
+    -ms-transition: text-shadow 1s linear;
+    -o-transition: text-shadow 1s linear;
+    transition: text-shadow 1s linear;
+}
+.glow_text:hover,
+.glow_text.glow {
+    text-shadow: 0 0 10px red;
+}
+/*
+#OnTheClock {
+    -webkit-transition: text-shadow 1s linear;
+    -moz-transition: text-shadow 1s linear;
+    -ms-transition: text-shadow 1s linear;
+    -o-transition: text-shadow 1s linear;
+    transition: text-shadow 1s linear;
+}
+
+#OnTheClock:hover,
+#OnTheClock.glow {
+	text-shadow: 0 0 10px red;
+}
+*/
+
+.glow-alert
+{
+	max-width: 30%;
+	max-height: 50px;
+	background: #dd4979;
+	border-radius: 10px;
+/*	color: #dbdbdb;*/
+	text-align:center;
+	padding:10px;
+	/*font-size:24px;*/
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-animation:glow 2.5s infinite linear; /* Safari and Chrome */
+	}
+	@-webkit-keyframes glow /* Safari and Chrome */
+	{
+	from {box-shadow: 0px 0px 50px #dd4979;}
+	50% {box-shadow: 0px 0px 10px #dd4979;}
+	to {box-shadow: 0px 0px 50px #dd4979;}
+}
+
+.glow-alert h4 {
+	margin-top: 5px;
+/*margin-bottom: 20px !important;
+padding-bottom: 5px;*/
+}
+
+.nextDraftLink {
+	text-decoration: underline;
+}

@@ -21,6 +21,7 @@ class DraftsController < ApplicationController
         end
 
         @lastPick = Draft.find(Draft.maximum("id"))
+        @lastPicked = Team.find(@lastPick.team_id)
 
     # @thisPick = Draft.find(Draft.maximum("id")) + 1
 
@@ -107,7 +108,7 @@ class DraftsController < ApplicationController
     @usersList = User.all.order("draft_order ASC").all
 
     if @auth_user
-      if Draft.count > 0 && @auth_user.id = @usr.id
+      if Draft.count > 0 && @auth_user.id == @usr.id
         UserMailer.draft_notification(@usr).deliver
       end
     end

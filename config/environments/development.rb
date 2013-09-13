@@ -42,21 +42,21 @@ WinsPool::Application.configure do
   # config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
 
-   # config.action_mailer.smtp_settings = {
-   #   :address => "localhost",
-   #   :port => 1025,
-   #   :domain => "www.titlepool.com",
-   #   :enable_starttls_auto => true
-   #  }
+   config.action_mailer.smtp_settings = {
+     :address => "localhost",
+     :port => 1025,
+     :domain => "www.titlepool.com",
+     :enable_starttls_auto => true
+    }
 
-        ActionMailer::Base.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :user_name            => "footballwinspool@gmail.com",
-      :password             => "qeewoyjinyglohmg",
-      :authentication       => "plain",
-      :enable_starttls_auto => true
-      }
+      #   ActionMailer::Base.smtp_settings = {
+      # :address              => "smtp.gmail.com",
+      # :port                 => 587,
+      # :user_name            => "footballwinspool@gmail.com",
+      # :password             => "qeewoyjinyglohmg",
+      # :authentication       => "plain",
+      # :enable_starttls_auto => true
+      # }
 
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.delivery_method = :smtp

@@ -33,3 +33,9 @@
 //     });
 //   });
 // })
+
+
+// var glow = $('.glow_text_green');
+// setInterval(function(){
+//     glow.toggleClass('glow');
+// }, 1000);

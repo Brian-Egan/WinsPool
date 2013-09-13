@@ -63,7 +63,28 @@ class TeamsController < ApplicationController
 
   def test
     @usr = @auth_user
-    UserMailer.draft_notification(@usr).deliver
+    # UserMailer.draft_notification(@usr).deliver
+    
+
+
+    respond_to do |format|
+      format.js
+      format.html
+      # format.json { head :no_content }
+
+    end
+  end
+
+  def testJS
+    # gon.teams = Team.avail
+    # @uT = Team.avail
+    
+    gon.teams = Team.find(7).name
+    @uT = Team.find(7).name
+     
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
