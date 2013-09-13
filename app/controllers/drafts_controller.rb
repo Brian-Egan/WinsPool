@@ -34,9 +34,14 @@ class DraftsController < ApplicationController
     end
 
         @lpickNum = @lastPick.pick
-        puts @roundNum
-        puts @lpickNum
-        puts @lastPick
+        puts "============================="
+        puts "Round #{@roundNum}"
+        puts "Last Pick Number: #{@lpickNum}"
+        puts "This Pick Number: #{@pickNum}"
+        puts "Looking for user with ID: #{}"
+        puts "Draft count is: #{Draft.count}"
+        # @lastPick
+        puts "============================="
 
   #===== Change below for number of players!=====
         # if @lastPick.pick == 12
