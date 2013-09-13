@@ -138,11 +138,11 @@ class DraftsController < ApplicationController
 
     @usersList = User.all.order("draft_order ASC").all
 
-    if @auth_user
-      if Draft.count > 0 && @auth_user.id == @usr.id
-        UserMailer.draft_notification(@usr).deliver
-      end
-    end
+    # if @auth_user
+    #   if Draft.count > 0 && @auth_user.id == @usr.id
+    #     UserMailer.draft_notification(@usr).deliver
+    #   end
+    # end
     
      respond_to do |format|
 
