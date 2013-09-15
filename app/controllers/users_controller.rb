@@ -79,6 +79,15 @@ class UsersController < ApplicationController
       format.js
     end
   end
+
+  def standings
+      @users = User.all
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
   
 
   private

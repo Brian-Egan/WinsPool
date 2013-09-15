@@ -31,6 +31,8 @@ WinsPool::Application.routes.draw do
 
   match '/usermodal' => 'users#modal', :via => :get
 
+  match '/standings' => 'users#standings', :via => :get
+
 
 
   # Example of regular route:

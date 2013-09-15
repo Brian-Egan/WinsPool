@@ -235,6 +235,10 @@ table {
 	vertical-align: middle !important;
 }
 
+.playerTeam {
+	cursor: pointer;
+}
+
 .rndNumRow {
 	font-size: 14px;
 	font-weight: bold;

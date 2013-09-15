@@ -10,11 +10,13 @@
 	/ Collect the nav links, forms, and other content for toggling
 	.collapse.navbar-collapse.navbar-ex1-collapse.navbar-right
 		%ul.nav.navbar-nav
-			%li.active
+			%li
 				%a{:href => "/drafts"} Draft
 			%li
-				%a{:href => "#"} League
+				%a{:href => "/standings"} Standings
 			%li
+				%a{:href => "/schedules"} Schedules
+			%li.active
 				%a{:href => "#"} #{@auth_user.owner}'s Team
 			
 			-# %li.dropdown
