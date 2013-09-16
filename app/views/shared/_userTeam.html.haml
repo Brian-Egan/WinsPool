@@ -8,13 +8,14 @@
 			%th.col-md-2.col-sm-2.col-xs-2.text-center  Win %
 		- u.teams.each do |t|
 			%tr
-				%td.text-left #{t.city} #{t.name}
-				%td.text-center #{t.wins}
-				%td.text-center #{t.losses}
-				%td.text-center #{t.ties}
-				- if t.wins > 0 || t.losses > 0 || t.ties > 0
-					- @gms = t.wins + t.losses + t.ties
-					- @winp = (t.wins.to_f/@gms.to_f)*1000
-					%td.text-center .#{number_to_percentage(@winp, precision: 0)}
-				- else
-					%td.text-center .000%
+				%td.text-left
+					%h4 #{t.city} #{t.name}
+				%td.text-center
+					%h4 #{t.wins}
+				%td.text-center
+					%h4 #{t.losses}
+				%td.text-center
+					%h4 #{t.ties}
+				- getUserWinPercent(t.wins, t.losses, t.ties)
+				%td.text-center
+					%h4.text-center #{@wP} 

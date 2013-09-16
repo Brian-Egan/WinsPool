@@ -20,10 +20,10 @@
 				%h5.text-center   GB
 		- i = 1
 		- @users.each do |u|
-			%tr
+			%tr.playerTeam{:"data-userid" => "#{u.id}"}
 				%td.text-center
 					%h4.text-left #{i}
-				%td.text-left.playerTeam{:"data-userid" => "#{u.id}" }
+				%td.text-left
 					%h4.text-left #{u.owner}
 				%td.text-center
 					%h4.text-center #{u.wins}
@@ -31,14 +31,9 @@
 					%h4.text-center #{u.losses}
 				%td.text-center
 					%h4.text-center #{u.ties}
-				- if u.wins > 0 || u.losses > 0 || u.ties > 0
-					- @gms = u.wins + u.losses + u.ties
-					- @winp = (u.wins.to_f/@gms.to_f)*1000
-					%td.text-center
-						%h4 .#{number_to_percentage(@winp, precision: 0)}
-				- else
-					%td.text-center
-						%h4 .000%
+				- getUserWinPercent(u.wins, u.losses, u.ties)
+				%td.text-center
+					%h4.text-center #{@wP}
 				- if u == @users[0]
 					%td.text-center
 						%h4 ---

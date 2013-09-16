@@ -32,7 +32,8 @@
 							%td.text-center 
 								%h4.text-center .#{number_to_percentage(@winp, precision: 0)}
 						- else 
-							%td.text-center .000
+							%td.text-center
+								%h4 .000
 						- i =+ 1
 		.modal-footer
 			%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
