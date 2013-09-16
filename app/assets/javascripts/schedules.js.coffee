@@ -17,3 +17,11 @@ $(document).delegate ".saveGame", "click", ->
   console.log "Visitor: " + vScore + " || Home: " + hScore
   subMit = {utf: "✓", id: gameNum, vTeamID: vTeam, vTeamScore: vScore, hTeamID: hTeam, hTeamScore: hScore, gameID: gameNum}
   $.get('/schedule/updateScore', subMit, null, "script")
+
+
+$(document).delegate ".wkBtn", "click", ->
+  WeekNum = $(this).data('wk');
+  $('.wkBtn').removeClass('active')
+  $(this).addClass('active')
+  subMit = {utf: "✓", weekNumber: WeekNum}
+  $.get('/schedules', subMit, null, 'script')

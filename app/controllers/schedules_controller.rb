@@ -6,7 +6,16 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.all.order("date ASC").all
+    if params[:weekNumber]
+      if params[:weekNumber] == "All"
+        @schedules = Schedule.all.order("date ASC").all
+      else
+        @wkNum = params[:weekNumber]
+        @schedules = Schedule.where(:week => @wkNum)
+      end
+    else
+      @schedules = Schedule.all.order("date ASC").all
+    end
   end
 
   # GET /schedules/1

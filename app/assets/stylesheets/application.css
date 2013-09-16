@@ -388,6 +388,19 @@ padding-bottom: 5px;*/
 }
 
 .standingsTable {
-	margin-left: 4%;
+	margin-left: 2%;
 
+}
+
+#SchedHead {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#SchedHead div {
+	margin-top: 15px;
+}
+
+#SchedHead h5 {
+	margin-top: 22px;
 }

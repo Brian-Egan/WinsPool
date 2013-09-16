@@ -1,11 +1,23 @@
-%h1  Games
+.row#SchedHead	
+	%h1.col-md-4  Games
+	 
+	%div.btn-toolbar.pull-right
+		%h5.col-md-1.col-xs-1.col-sm-1.text-center Week:
+		%div{:class => 'btn-group'}
+			- @y = 1
+			- while @y < 18
+				%button{:class => 'btn btn-sm btn-default wkBtn', :'data-wk' => @y, :id => "Week#{@y}"} #{@y}
+				- @y += 1
+		%div{:class => 'btn-group'}
+			%button{:class => 'btn btn-sm  btn-info wkBtn', :'data-wk' => 'All', :id => 'All'} Show All
+			%div{:class => 'btn-toolbar'}
 
-%div.col-md-11.col-xs-12.schedTable
+%div.col-md-10.col-xs-12.schedTable
 	%table{:class => 'table table-striped table-hover'}
 		%thead
 			%tr
-				%th.col-md-1.col-xs-1
-					%h5.text-center Week
+				-# %th.col-md-1.col-xs-1
+				-# 	%h5.text-center Week
 				%th.col-md-1.col-xs-1
 					%h5.text-center  Date
 				%th.col-md-1.col-xs-1
@@ -18,11 +30,8 @@
 					%h5.text-left  Home
 				%th.col-md-1.col-xs-1
 					%h5.text-center  Score
-				%th
+				%th.col-md-1.col-xs-1
 					%h5.text-center Status
 		%tbody#gamesTable
-			- @schedules.each do |s|
-				= render :partial => 'shared/gamesRow', :locals => {:s => s}
+			= render :partial => 'shared/gamesRow', :locals => {:schedules => @schedules}
 			
-
-	<%= link_to 'New Schedule', new_schedule_path %>
