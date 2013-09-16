@@ -4,8 +4,8 @@
 	%div.btn-toolbar.pull-right
 		%h5.col-md-1.col-xs-1.col-sm-1.text-center Week:
 		%div{:class => 'btn-group'}
-			- @y = 1
-			- while @y < 18
+			- @y = Schedule.minimum('week')
+			- while @y <= Schedule.maximum('week')
 				%button{:class => 'btn btn-sm btn-default wkBtn', :'data-wk' => @y, :id => "Week#{@y}"} #{@y}
 				- @y += 1
 		%div{:class => 'btn-group'}
