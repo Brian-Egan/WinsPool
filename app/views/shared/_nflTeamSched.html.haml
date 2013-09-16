@@ -21,14 +21,16 @@
 					- getGameStatus(g.date)
 					- if g.winning_team_id.nil?
 						- @score = ""
-					- elsif g.winning_team_id == t.id
-						- @score = "W #{g.visitor_score} - #{g.home_score}"
-						- @color = "text-success"
-					- elsif g.winning_team_id != t.id
-						- @score = "L #{g.visitor_score} - #{g.home_score}"
-						-# - @color = "text-danger"
-					- else 
-						
+						- @color = ""
+					- else
+						- if g.winning_team_id == t.id
+							- @score = "W #{g.visitor_score} - #{g.home_score}"
+							- @color = "text-success"
+						- elsif g.winning_team_id != t.id
+							- @score = "L #{g.visitor_score} - #{g.home_score}"
+							- @color = "text-danger"
+				
+
 					%tr
 						%td
 							%h6.text-left{:class => @color} #{g.week}
