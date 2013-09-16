@@ -26,7 +26,9 @@
 						- @color = "text-success"
 					- elsif g.winning_team_id != t.id
 						- @score = "L #{g.visitor_score} - #{g.home_score}"
-						- @color = "text-danger"
+						-# - @color = "text-danger"
+					- else 
+						
 					%tr
 						%td
 							%h6.text-left{:class => @color} #{g.week}

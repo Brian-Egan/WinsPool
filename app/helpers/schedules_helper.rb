@@ -10,9 +10,9 @@ module SchedulesHelper
 
 
 	def getGameStatus(date)
-		if Time.now > date && (Time.now - date) < 100000
+		if Time.now() > date && (Time.now - date) < 100000
 			@color = "text-warning"
-		elsif Time.now > date
+		elsif Time.now() > date
 			@color = "text-danger"
 		else
 			@color = ""
@@ -20,6 +20,6 @@ module SchedulesHelper
 
 		return @color
 		end
-			
+
 
 end
