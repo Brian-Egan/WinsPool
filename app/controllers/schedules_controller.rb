@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
   include UsersHelper
+  include SchedulesHelper
   # before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
   # GET /schedules
@@ -99,11 +100,13 @@ class SchedulesController < ApplicationController
     if @wTeam.taken == true
       @wUser = @wTeam.user
       UpdateUserWLT(@wUser)
+      UpdateWLT(@wUser)
     end
 
     if @lTeam.taken == true
       @lUser = @lTeam.user
       UpdateUserWLT(@lUser)
+      UpdateWLT(@lUser)
     end
 
     
