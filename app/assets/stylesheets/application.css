@@ -58,7 +58,7 @@
 	margin-top: 10px;
 }
 
-.playerRow:hover {
+.playerRow:hover, .NFLTeamSched:hover {
 	cursor: pointer;
 }
 
@@ -403,4 +403,25 @@ padding-bottom: 5px;*/
 
 #SchedHead h5 {
 	margin-top: 22px;
+}
+
+#NFLHeader {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#NFLHeader div {
+	margin-top: 15px;
+}
+
+#NFLHeader h5 {
+	margin-top: 22px;
+}
+
+.teamModalFt {
+	margin-top: 0px !important;
+}
+
+.teamModalBdy {
+	padding-bottom: 0px !important;
 }

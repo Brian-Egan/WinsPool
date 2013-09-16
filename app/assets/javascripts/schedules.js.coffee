@@ -25,3 +25,10 @@ $(document).delegate ".wkBtn", "click", ->
   $(this).addClass('active')
   subMit = {utf: "✓", weekNumber: WeekNum}
   $.get('/schedules', subMit, null, 'script')
+
+
+$(document).delegate ".NFLTeamSched", "click", ->
+  teamNum = $(this).data('teamid');
+  # alert teamNum
+  subMit = {utf: "✓", teamID: teamNum}
+  $.get('/NFLTeamSched', subMit, null, 'script')

@@ -33,6 +33,8 @@ WinsPool::Application.routes.draw do
 
   match '/standings' => 'users#standings', :via => :get
 
+  match '/NFLStandings' => 'schedules#NFLStandings', :via => :get
+  match '/NFLTeamSched' => 'schedules#NFLTeamSched', :via => :get
 
 
   # Example of regular route:

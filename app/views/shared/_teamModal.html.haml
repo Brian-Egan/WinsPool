@@ -6,7 +6,7 @@
 		.modal-body
 			%table.table.table-striped.table-condensed.table-bordered
 				%tr
-					%th.col-md-5.col-sm-1.col-xs-1
+					%th.col-md-5.col-sm-5.col-xs-5
 						%h5.text-left  Team
 					%th.col-md-1.col-sm-1.col-xs-1.text-center
 						%h5.text-center  W
@@ -27,13 +27,9 @@
 							%h4.text-center #{t.losses}
 						%td.text-center
 							%h4.text-center #{t.ties}
-						- if t.wins > 0 || t.losses > 0 || t.ties > 0
-							- @winp = (t.wins.to_f/(t.wins.to_f + t.losses.to_f + t.ties.to_f))*1000
-							%td.text-center 
-								%h4.text-center .#{number_to_percentage(@winp, precision: 0)}
-						- else 
-							%td.text-center
-								%h4 .000
+						- getUserWinPercent(t.wins, t.losses, t.ties)
+						%td.text-center 
+							%h4.text-center #{@wP}
 						- i =+ 1
 		.modal-footer
 			%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

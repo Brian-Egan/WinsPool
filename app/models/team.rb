@@ -4,6 +4,10 @@ has_one :draft
 has_one :user, :through => :draft
 
 
+	# def games
+ #        where("schedules.home_id = ?", self.id) + where("schedules.visitor_id = ?", self.id)
+ #    end
+
 	# def self.winz
 	# 	@wins = Schedule.where(:winning_team_id => self.id).count
 	# 	return @wins

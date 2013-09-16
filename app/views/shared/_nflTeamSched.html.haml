@@ -1,0 +1,50 @@
+
+.modal-dialog
+	.modal-content
+		.modal-header
+			%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+			%h4.modal-title #{t.city} #{t.name} 2013 Schedule
+		.modal-body.teamModalBdy
+			%table.table.table-striped.table-condensed.table-bordered
+				%tr
+					%th.col-md-1.col-sm-1.col-xs-1
+						%h6 Week
+					%th.col-md-2.col-sm-2.col-xs-2
+						%h6 Date
+					%th.col-md-2.col-sm-2.col-xs-2
+						%h6 Time
+					%th.col-md-5.col-sm-5.col-xs-5
+						%h6.text-left  Opponent
+					%th.col-md-2.col-sm-2.col-xs-2
+						%h6.text-center Result
+				- games.each do |g|
+					- getGameStatus(g.date)
+					- if g.winning_team_id.nil?
+						- @score = ""
+					- elsif g.winning_team_id == t.id
+						- @score = "W #{g.visitor_score} - #{g.home_score}"
+						- @color = "text-success"
+					- elsif g.winning_team_id != t.id
+						- @score = "L #{g.visitor_score} - #{g.home_score}"
+						- @color = "text-danger"
+					%tr
+						%td
+							%h6.text-left{:class => @color} #{g.week}
+						%td.text-center
+							%h6.text-center{:class => @color}  #{g.date.strftime('%a, %b %-d')}
+						%td.text-center
+							%h6.text-center{:class => @color}  #{g.date.strftime('%l:%M %p')}
+						- if g.home_id == t.id
+							- @opp = "#{Team.find(g.visitor_id).city} #{Team.find(g.visitor_id).name}"
+						- else 
+							- @opp = "@ #{Team.find(g.home_id).city} #{Team.find(g.home_id).name}"
+						%td.text-center
+							%h6.text-center{:class => @color}  #{@opp}  
+						%td.text-center
+							%h6{:class => @color} #{@score}
+						-# - getUserWinPercent(t.wins, t.losses, t.ties)
+						-# %td.text-center 
+						-# 	%h4.text-center #{@wP}
+		.modal-footer.teamModalFt
+			%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+			-# %button.btn.btn-primary{:type => "button"} Save changes

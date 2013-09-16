@@ -11,47 +11,11 @@
 	.collapse.navbar-collapse.navbar-ex1-collapse.navbar-right
 		%ul.nav.navbar-nav
 			%li
-				%a{:href => "/drafts"} Draft
+				%a.active{:href => "/standings"} Pool Standings
 			%li
-				%a{:href => "/standings"} Standings
+				%a{:href => "/NFLStandings"} NFL Standings
 			%li
-				%a{:href => "/schedules"} Schedules
+				%a{:href => "/schedules"} NFL Schedule
 			%li.active
 				%a{:href => "/users/#{@auth_user.id}"} #{@auth_user.owner}'s Team
 			
-			-# %li.dropdown
-			-# 	%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-			-# 		Dropdown
-			-# 		%b.caret
-			-# 	%ul.dropdown-menu
-			-# 		%li
-			-# 			%a{:href => "#"} Action
-			-# 		%li
-			-# 			%a{:href => "#"} Another action
-			-# 		%li
-			-# 			%a{:href => "#"} Something else here
-			-# 		%li
-			-# 			%a{:href => "#"} Separated link
-			-# 		%li
-			-# 			%a{:href => "#"} One more separated link
-		-# %form.navbar-form.navbar-left{:role => "search"}
-		-# 	.form-group
-		-# 		%input.form-control{:placeholder => "Search", :type => "text"}
-		-# 	%button.btn.btn-default{:type => "submit"} Submit
-		-# %ul.nav.navbar-nav.navbar-right
-		-# 	%li
-		-# 		%a{:href => "#"} Link
-		-# 	%li.dropdown
-		-# 		%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-		-# 			Dropdown
-		-# 			%b.caret
-		-# 		%ul.dropdown-menu
-		-# 			%li
-		-# 				%a{:href => "#"} Action
-		-# 			%li
-		-# 				%a{:href => "#"} Another action
-		-# 			%li
-		-# 				%a{:href => "#"} Something else here
-		-# 			%li
-		-# 				%a{:href => "#"} Separated link
-	/ /.navbar-collapse

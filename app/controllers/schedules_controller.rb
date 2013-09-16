@@ -72,6 +72,36 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def NFLTeamSched
+    if params[:teamID]
+      @teamID = params[:teamID]
+      @gms = Schedule.where(:home_id => @teamID) + Schedule.where(:visitor_id => @teamID)
+      @games = @gms.sort_by{|g| g[:date]}
+      @games.each do |g|
+        puts g.date
+      end
+      @team = Team.find(@teamID)
+    end
+
+    respond_to do |format|
+      format.js
+    end
+
+
+  end
+
+  def NFLStandings
+
+    @teams = Team.all.order('wins DESC')
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
+  end
+
+
   def score
     @game = Schedule.find(params[:gameID])
     @game.visitor_score = params[:vTeamScore]
