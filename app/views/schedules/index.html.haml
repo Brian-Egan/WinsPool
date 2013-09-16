@@ -1,97 +1,28 @@
-%h1 Listing Games
+%h1  Games
 
-%div.col-md-11.col-xs-12
+%div.col-md-11.col-xs-12.schedTable
 	%table{:class => 'table table-striped table-hover'}
 		%thead
 			%tr
-				%th{:class => 'col-md-1 col-xs-1'} Week
-				%th{:class => 'col-md-1 col-xs-1'} Date
-				%th{:class => 'col-md-1 col-xs-1'} Time
-				%th{:class => 'col-md-3 col-xs-3'} Visitor
-				%th{:class => 'col-md-1 col-xs-1'} Visitor Score
-				%th{:class => 'col-md-3 col-xs-3'} Home
-				%th{:class => 'col-md-1 col-xs-1'} Home Score
-				%th Edit
+				%th.col-md-1.col-xs-1
+					%h5.text-center Week
+				%th.col-md-1.col-xs-1
+					%h5.text-center  Date
+				%th.col-md-1.col-xs-1
+					%h5.text-center  Time
+				%th.col-md-3.col-xs-3
+					%h5.text-left  Visitor
+				%th.col-md-1.col-xs-1
+					%h5.text-center  Score
+				%th.col-md-3.col-xs-3
+					%h5.text-left  Home
+				%th.col-md-1.col-xs-1
+					%h5.text-center  Score
+				%th
+					%h5.text-center Status
 		%tbody#gamesTable
 			- @schedules.each do |s|
 				= render :partial => 'shared/gamesRow', :locals => {:s => s}
-			-# %tr
-			-# 	- @vTeam = Team.find(s.visitor_id)
-			-# 	- @hTeam = Team.find(s.home_id)
-			-# 	- if @vTeam.id == s.winning_team_id
-			-# 		- @vTeamText = "text-success"
-			-# 		- @hTeamText = "text-danger"
-			-# 	- elsif @hTeam.id == s.winning_team_id
-			-# 		- @hTeamText = "text-success"
-			-# 		- @vTeamText = "text-danger"
-			-# 	- elsif s.date < Time.now
-			-# 		- @vTeamText = "text-warning"
-			-# 		- @hTeamText = "text-warning"
-			-# 	- else
-			-# 		- @vTeamText = ""
-			-# 		- @hTeamText = ""
-			-# 	%td{:class => 'centerText'} #{s.week}
-			-# 	%td #{s.date.strftime('%a, %b %-d')}
-			-# 	%td #{s.date.strftime('%l:%M %p')}
-			-# 	%td
-			-# 		%h4{:class => "#{@vTeamText}"} #{@vTeam.city} #{@vTeam.name}
-			-# 	- if s.visitor_score.nil?
-			-# 		%td{:class => 'col-md-1 col-xs-1'}
-			-# 			%input.form-control{:id => "vTeam#{s.id}"}
-
-			-# 	- else
-			-# 		%td
-			-# 			%h4 #{s.visitor_score}
-			-# 	%td
-			-# 		%h4 #{@hTeam.city} #{@hTeam.name}
-			-# 	- if s.home_score.nil?
-			-# 		%td{:class => 'col-md-1 col-xs-1'}
-			-# 			%input.form-control{:id => "hTeam#{s.id}"}  
-			-# 	- else
-			-# 		%td 
-			-# 			%h4 #{s.home_score}
-			-# 	- if s.winning_team_id.nil?
-			-# 		%td
-			-# 			%button.btn.btn-info.btn-sm.saveGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}"} Save
-			-# 	- else
-			-# 		%td 
-			-# 			%button.btn.btn-caution.btn-sm.editGame{:'data-sid' => "#{s.id}"} Edit
-			-# 			#{Team.find(s.winning_team_id).name}
-
--# <table>
--#   <thead>
--#     <tr>
--#       <th>Week</th>
--#       <th>Date</th>
--#       <th>Visitor</th>
--#       <th>Home</th>
--#       <th>Visitor score</th>
--#       <th>Home score</th>
--#       <th>Winning team</th>
--#       <th></th>
--#       <th></th>
--#       <th></th>
--#     </tr>
--#   </thead>
-
--#   <tbody>
--#     <% @schedules.each do |schedule| %>
--#       <tr>
--#         <td><%= schedule.week %></td>
--#         <td><%= schedule.date %></td>
--#         <td><%= schedule.visitor_id %></td>
--#         <td><%= schedule.home_id %></td>
--#         <td><%= schedule.visitor_score %></td>
--#         <td><%= schedule.home_score %></td>
--#         <td><%= schedule.winning_team_id %></td>
--#         <td><%= link_to 'Show', schedule %></td>
--#         <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
--#         <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
--#       </tr>
--#     <% end %>
--#   </tbody>
--# </table>
-
--# <br>
+			
 
 	<%= link_to 'New Schedule', new_schedule_path %>

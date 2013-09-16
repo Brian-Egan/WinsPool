@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916171906) do
+ActiveRecord::Schema.define(version: 20130916180717) do
 
   create_table "drafts", force: true do |t|
     t.integer  "round"
@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(version: 20130916171906) do
     t.integer  "sign_in_count",      default: 0,     null: false
     t.datetime "last_sign_in_at"
     t.boolean  "admin",              default: false
+    t.integer  "wins",               default: 0
+    t.integer  "losses",             default: 0
+    t.integer  "ties",               default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

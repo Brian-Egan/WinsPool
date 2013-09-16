@@ -6,26 +6,31 @@
 		.modal-body
 			%table.table.table-striped.table-condensed.table-bordered
 				%tr
-					%th.col-md-1.col-sm-1.col-xs-1 Pick
-					%th.col-md-5.col-sm-1.col-xs-1 Team
-					%th.col-md-1.col-sm-1.col-xs-1.text-center W
-					%th.col-md-1.col-sm-1.col-xs-1.text-center L
-					%th.col-md-1.col-sm-1.col-xs-1.text-center T
-					%th.col-md-2.col-sm-2.col-xs-2.text-center Win %
+					%th.col-md-5.col-sm-1.col-xs-1
+						%h5.text-left  Team
+					%th.col-md-1.col-sm-1.col-xs-1.text-center
+						%h5.text-center  W
+					%th.col-md-1.col-sm-1.col-xs-1.text-center
+						%h5.text-center  L
+					%th.col-md-1.col-sm-1.col-xs-1.text-center
+						%h5.text-center  T
+					%th.col-md-2.col-sm-2.col-xs-2.text-center
+						%h5.text-center  Win %
 				- i = 1
 				- u.teams.each do |t|
 					%tr
-						%td #{i}
-						%td #{t.city} #{t.name}
-						%td.text-center #{t.wins}
-						%td.text-center #{t.losses}
-						%td.text-center #{t.ties}
-						- @winp = t.wins.to_f/(t.wins.to_f + t.losses.to_f + t.ties.to_f)
-						- if @winp > 0
-							- if @winp < 1
-								%td.text-center .#{(@winp * 1000)}
-							- else 
-								%td.text-center #{@winp.to_i * 1000}
+						%td
+							%h4.text-left #{t.city} #{t.name}
+						%td.text-center
+							%h4.text-center #{t.wins}
+						%td.text-center
+							%h4.text-center #{t.losses}
+						%td.text-center
+							%h4.text-center #{t.ties}
+						- if t.wins > 0 || t.losses > 0 || t.ties > 0
+							- @winp = (t.wins.to_f/(t.wins.to_f + t.losses.to_f + t.ties.to_f))*1000
+							%td.text-center 
+								%h4.text-center .#{number_to_percentage(@winp, precision: 0)}
 						- else 
 							%td.text-center .000
 						- i =+ 1

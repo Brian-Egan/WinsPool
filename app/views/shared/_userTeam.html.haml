@@ -14,7 +14,7 @@
 				%td.text-center #{t.ties}
 				- if t.wins > 0 || t.losses > 0 || t.ties > 0
 					- @gms = t.wins + t.losses + t.ties
-					- @winp = (t.wins.to_f/@gms.to_f)
-					%td.text-center #{number_to_percentage(@winp, precision: 3)}
+					- @winp = (t.wins.to_f/@gms.to_f)*1000
+					%td.text-center .#{number_to_percentage(@winp, precision: 0)}
 				- else
 					%td.text-center .000%

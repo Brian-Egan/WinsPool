@@ -33,7 +33,7 @@
 						- if @user.win_percent.nan?
 							%h4{:class => 'text-center'} .000
 						- else
-							%h4{:class => 'text-center'} #{number_to_percentage(@user.win_percent, precision: 3)}
+							%h4{:class => 'text-center'} .#{number_to_percentage((@user.win_percent*1000), precision: 0)}
 
 = render partial: 'shared/userTeam', :locals => {:u => @user}
 

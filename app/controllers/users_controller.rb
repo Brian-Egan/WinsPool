@@ -81,7 +81,7 @@ class UsersController < ApplicationController
   end
 
   def standings
-      @users = User.all
+      @users = User.all.order('wins DESC')
 
     respond_to do |format|
       format.html

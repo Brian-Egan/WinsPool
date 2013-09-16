@@ -362,3 +362,32 @@ padding-bottom: 5px;*/
 .nextDraftLink {
 	text-decoration: underline;
 }
+
+.schedGame {
+	opacity: .7;
+	margin-top: 7%;
+}
+
+.unAuthGame {
+	margin-top: 25% !important;
+	margin-bottom: 25%;
+}
+
+.tableBorderLeft {
+	border-left: 1px solid grey;
+}
+
+.gameSchedRow {
+	max-height: 50px !important;
+	height: 40px !important;
+}
+
+.schedTable {
+	margin-left: 3%;
+
+}
+
+.standingsTable {
+	margin-left: 4%;
+
+}
