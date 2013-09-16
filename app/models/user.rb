@@ -6,17 +6,25 @@ has_many :drafts
 
 has_secure_password
 
+scope :teamWins, joins(:teams).order('teams.wins DESC')
+
+scope :order_by_wins, joins(:teams).select('users.id, sum(teams.wins) as total_wins').group('users.id').order('toal_wins desc')
+
+scope :order_by_winz, joins(:teams).select('users.id, sum(teams.wins) as total_wins').order('total_wins DESC')  
+
+scope :order_wins, select('id, wins as total_wins').order('total_wins DESC')
+
 	def self.teamz
 		self.drafts.each do |d|
 			return d.player_id
 		end
 	end
 
-	def wins
+	def ws
 		return self.teams.sum(:wins)
 	end
 
-	def losses
+	def ls
 		return self.teams.sum(:losses)
 	end
 
@@ -26,7 +34,7 @@ has_secure_password
 
 	def win_percent
 		@games = self.wins.to_f + self.losses.to_f + self.ties.to_f
-		return self.wins.to_f/@games
+		return (self.wins.to_f/@games)
 	end
 
 

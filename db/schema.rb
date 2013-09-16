@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912210404) do
+ActiveRecord::Schema.define(version: 20130916171906) do
 
   create_table "drafts", force: true do |t|
     t.integer  "round"
@@ -84,9 +84,10 @@ ActiveRecord::Schema.define(version: 20130912210404) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "encrypted_password", default: "", null: false
-    t.integer  "sign_in_count",      default: 0,  null: false
+    t.string   "encrypted_password", default: "",    null: false
+    t.integer  "sign_in_count",      default: 0,     null: false
     t.datetime "last_sign_in_at"
+    t.boolean  "admin",              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

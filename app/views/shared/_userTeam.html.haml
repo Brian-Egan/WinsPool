@@ -1,0 +1,20 @@
+#UserTeams.col-md-10.col-md-offset-1.col-sm-12.col-xs-12
+	%table{:class => 'table table-striped table-hover'}
+		%tr
+			%th.col-md-5.col-md-offset-1.col-sm-5.col-xs-5.text-left Team
+			%th.col-md-1.col-sm-1.col-xs-1.text-center Win
+			%th.col-md-1.col-sm-1.col-xs-1.text-center   Loss
+			%th.col-md-1.col-sm-1.col-xs-1.text-center   Tie
+			%th.col-md-2.col-sm-2.col-xs-2.text-center  Win %
+		- u.teams.each do |t|
+			%tr
+				%td.text-left #{t.city} #{t.name}
+				%td.text-center #{t.wins}
+				%td.text-center #{t.losses}
+				%td.text-center #{t.ties}
+				- if t.wins > 0 || t.losses > 0 || t.ties > 0
+					- @gms = t.wins + t.losses + t.ties
+					- @winp = (t.wins.to_f/@gms.to_f)
+					%td.text-center #{number_to_percentage(@winp, precision: 3)}
+				- else
+					%td.text-center .000%
