@@ -1,46 +1,57 @@
-.jumbotron.headerJumbo#NFLHeader
-	%h1 NFL Standings
+.jumbotron.headerJumbo.row
+	%h1.pull-left.clearNone NFL Standings
+	%p.small.i.pull-right.clearNone.updatedAt Scores Updated at: #{@updatedAt.strftime('%_m/%-d, %l:%M %p')}
 
-#UserTeams.col-md-11.col-sm-12.col-xs-12
-	%table{:class => 'table table-striped table-hover standingsTable table-condensed'}
-		%tr
-			%th.col-md-1.col-sm-1.col-xs-1.text-left
-				%h6.text-left Rank
-			%th.col-md-4.col-md-offset-1.col-sm-2.col-xs-2.text-left
-				%h6.text-left Team
-			%th.col-md-1.col-sm-1.col-xs-1.text-center
-				%h6.text-center Win
-			%th.col-md-1.col-sm-1.col-xs-1.text-center
-				%h6.text-center   Loss
-			%th.col-md-1.col-sm-1.col-xs-1.text-center
-				%h6.text-center   Tie
-			%th.col-md-2.col-sm-2.col-xs-2.text-center
-				%h6.text-center  Win %
-			%th.col-md-1.col-sm-1.col-xs-1.text-center
-				%h6.text-center   GB
-		- i = 1
-		- @teams.each do |u|
-			%tr.NFLTeamSched{:"data-teamid" => "#{u.id}"}
-				%td.text-left
-					%h5.text-left #{i}
-				%td.text-left
-					%h5.text-left #{u.city} #{u.name}
-				%td.text-center
-					%h5.text-center #{u.wins}
-				%td.text-center
-					%h5.text-center #{u.losses}
-				%td.text-center
-					%h5.text-center #{u.ties}
-				- getUserWinPercent(u.wins, u.losses, u.ties)
-				%td.text-center
-					%h5.text-center #{@wP}
-				- if u.wins == @teams[0].wins
-					%td.text-center
-						%h5 --
+#StandingsBody
+	%p
+		%small
+			%em Click a team to see its schedule & results
+			%br
+			%span.trow-info-bs Highlighted teams are undrafted
+	#UserTeams.col-md-12.col-sm-12.col-xs-12
+		%table{:class => 'table table-striped table-hover standingsTable table-condensed'}
+			%tr
+				%th.col-md-1.col-sm-1.col-xs-1.text-left
+					%h6.text-left Rnk.
+				%th.col-md-4.col-md-offset-1.col-sm-3.col-xs-3.text-left
+					%h6.text-left Team
+				%th.col-md-1.col-sm-1.col-xs-1.text-center
+					%h6.text-center Win
+				%th.col-md-1.col-sm-1.col-xs-2.text-center
+					%h6.text-center   Loss
+				%th.col-md-1.col-sm-1.col-xs-1.text-center
+					%h6.text-center   Tie
+				%th.col-md-2.col-sm-2.col-xs-2.text-center
+					%h6.text-center  Win %
+				%th.col-md-1.col-sm-1.col-xs-1.text-center
+					%h6.text-center   GB
+			- i = 1
+			- @teams.each do |u|
+				- if u.taken == false
+					- @highlight = "trow-info-bs"
 				- else
-					- @gb = @teams[0].wins - u.wins
+					- @highlight = "bleh"
+				%tr.NFLTeamSched{:"data-teamid" => "#{u.id}", :class => @highlight}
+					%td.text-left
+						%h5.text-left.text-centerAlign #{i}
+					%td.text-left
+						%h5.text-left #{u.city} #{u.name}
 					%td.text-center
-						%h5 #{@gb}
-				- i += 1
+						%h5.text-center #{u.wins}
+					%td.text-center
+						%h5.text-center #{u.losses}
+					%td.text-center
+						%h5.text-center #{u.ties}
+					- getUserWinPercent(u.wins, u.losses, u.ties)
+					%td.text-center
+						%h5.text-center #{@wP}
+					- if u.wins == @teams[0].wins
+						%td.text-center
+							%h5 --
+					- else
+						- @gb = @teams[0].wins - u.wins
+						%td.text-center
+							%h5 #{@gb}
+					- i += 1
 
 #NFLTeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}

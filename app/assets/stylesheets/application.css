@@ -13,6 +13,7 @@
  */
 
 
+
 .ffBody {
 	padding: auto;
 	margin-left: 15px;
@@ -95,6 +96,10 @@ td.info {
 	background-color: rgba(102,153,204,.4) !important;
 }
 
+tr.info {
+	background-color: rgba(102,153,204,.4) !important;
+}
+
 .info-btn {
 	text-align: center;
 	width: 20px;
@@ -174,8 +179,29 @@ th {
 }
 
 .tro-info {
-	background: rgba(90, 150, 217, .2) !important;
+	background: rgba(90, 150, 217, .9) !important;
 }
+
+/*The below high rows in User & Team standings*/
+
+.trow-warning-bs {
+	background: rgba(252, 248, 227, 1) !important;
+}
+
+.trow-warning-bs td {
+	background: inherit !important;
+}
+
+.trow-info-bs {
+	background: rgba(91, 192, 222, .2) !important;
+}
+
+.trow-info-bs td {
+	background: inherit !important;
+}
+
+/*============================*/
+
 
 .centerText {
 	text-align: center;
@@ -236,6 +262,10 @@ table {
 }
 
 .playerTeam {
+	cursor: pointer;
+}
+
+.NFLTeamSched {
 	cursor: pointer;
 }
 
@@ -424,4 +454,58 @@ padding-bottom: 5px;*/
 
 .teamModalBdy {
 	padding-bottom: 0px !important;
+	padding-left: 1px !important;
+	padding-right: 1px !important;
+	padding-top: 0px !important;
+}
+
+#StandingsBody {
+	padding-left: 3%;
+	padding-right: 3%;
+	margin-right: 3px;
+}
+
+#UserTeams {
+	padding-left: 0px;
+	/*padding-right: 0px;*/
+
+}
+
+#UserTeams table {
+	margin-left: 0px;
+}
+
+span.trow-info-bs {
+	margin-left: 15px;
+}
+
+.i {
+	font-style: italic;
+}
+
+.small {
+	font-size: 10px;
+}
+
+.clearNone {
+	clear: none;
+/*	display: inline !important;*/
+}
+
+.text-bottom {
+	vertical-align: bottom;
+}
+
+.updatedAt {
+	margin-bottom: 0px;
+}
+
+.headerJumbo h1 {
+	margin-top: 3px;
+}
+
+.text-centerAlign {
+	/*margin-top: auto;
+	margin-bottom: auto;
+	vertical-align: middle;*/
 }

@@ -20,7 +20,7 @@ class SessionController < ApplicationController
       user.sign_in_count += 1
       user.last_sign_in_at = Time.now
       user.save
-      redirect_to user_path(user.id)
+      redirect_to '/standings'
     else
       @user = User.new
       respond_to do |format|

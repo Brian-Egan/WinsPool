@@ -93,6 +93,7 @@ class SchedulesController < ApplicationController
   def NFLStandings
 
     @teams = Team.all.order('wins DESC')
+    @updatedAt = Schedule.maximum('updated_at')
 
     respond_to do |format|
       format.html

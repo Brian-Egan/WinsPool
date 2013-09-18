@@ -32,3 +32,4 @@ $(document).delegate ".NFLTeamSched", "click", ->
   # alert teamNum
   subMit = {utf: "✓", teamID: teamNum}
   $.get('/NFLTeamSched', subMit, null, 'script')
+

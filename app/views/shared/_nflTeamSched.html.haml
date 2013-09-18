@@ -8,13 +8,13 @@
 			%table.table.table-striped.table-condensed.table-bordered
 				%tr
 					%th.col-md-1.col-sm-1.col-xs-1
-						%h6 Week
+						%h6.text-center Wk.
 					%th.col-md-2.col-sm-2.col-xs-2
-						%h6 Date
+						%h6.text-center Date
 					%th.col-md-2.col-sm-2.col-xs-2
-						%h6 Time
+						%h6.text-center Time
 					%th.col-md-5.col-sm-5.col-xs-5
-						%h6.text-left  Opponent
+						%h6.text-center  Opponent
 					%th.col-md-2.col-sm-2.col-xs-2
 						%h6.text-center Result
 				- games.each do |g|
@@ -33,19 +33,19 @@
 
 					%tr
 						%td
-							%h6.text-left{:class => @color} #{g.week}
+							%h6.text-center.small{:class => @color} #{g.week}
 						%td.text-center
-							%h6.text-center{:class => @color}  #{g.date.strftime('%a, %b %-d')}
+							%h6.text-center.small{:class => @color}  #{g.date.strftime('%a, %b %-d')}
 						%td.text-center
-							%h6.text-center{:class => @color}  #{g.date.strftime('%l:%M %p')}
+							%h6.text-center.small{:class => @color}  #{g.date.strftime('%l:%M %p')}
 						- if g.home_id == t.id
 							- @opp = "#{Team.find(g.visitor_id).city} #{Team.find(g.visitor_id).name}"
 						- else 
 							- @opp = "@ #{Team.find(g.home_id).city} #{Team.find(g.home_id).name}"
 						%td.text-center
-							%h6.text-center{:class => @color}  #{@opp}  
+							%h6.text-center.small{:class => @color}  #{@opp}  
 						%td.text-center
-							%h6{:class => @color} #{@score}
+							%h6.small{:class => @color} #{@score}
 						-# - getUserWinPercent(t.wins, t.losses, t.ties)
 						-# %td.text-center 
 						-# 	%h4.text-center #{@wP}
