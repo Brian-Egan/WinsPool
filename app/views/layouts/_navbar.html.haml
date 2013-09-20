@@ -11,11 +11,11 @@
 	.collapse.navbar-collapse.navbar-ex1-collapse.navbar-right
 		%ul.nav.navbar-nav
 			%li
-				%a.active{:href => "/standings"} Pool Standings
+				%a.active{:href => "/standings", :'data-spinner' => ""} Pool Standings
 			%li
-				%a{:href => "/NFLStandings"} NFL Standings
+				%a{:href => "/NFLStandings", :'data-spinner' => ""} NFL Standings
 			%li
-				%a{:href => "/schedules"} NFL Schedule
+				%a{:href => "/schedules", :'data-spinner' => ""} NFL Schedule
 			%li.active
-				%a{:href => "/users/#{@auth_user.id}"} #{@auth_user.owner}'s Team
+				%a{:href => "/users/#{@auth_user.id}", :'data-spinner' => ""} #{@auth_user.owner}'s Team
 			

@@ -39,3 +39,20 @@
 // setInterval(function(){
 //     glow.toggleClass('glow');
 // }, 1000);
+
+document.addEventListener("page:fetch", 
+	console.log("yo dog, page fetching!")
+	);
+document.addEventListener("page:receive", 
+	console.log("yo dog, page RECIEVING!")
+	);
+
+document.addEventListener("page:change", 
+	console.log("yo dog, page CHANGED MOFO!")
+	);
+
+
+
+// $("*[data-spinner]").click('ajax:beforeSend', function(e){
+//   console.log("yo dog, data spinners been clicked!")
+// });

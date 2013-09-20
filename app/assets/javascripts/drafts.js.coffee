@@ -40,9 +40,9 @@ $(document).delegate ".playerRow", "click", ->
 	subMit = {utf: "✓", name: teamName, round: roundNumber, pick: pickNumber, userID: userNum}
 	$.post('/drafts', subMit, null, "script")
 
-
-
-
+$(document).delegate "*[data-spinner]", "click", ->
+  console.log("yo dog, data spinners been clicked!")
+  $("#SpinnerModal").modal('toggle')
 # $(document).delegate ".playerRow", "click", ->
 # 	teamName = $(this).data('name');
 # 	$('#draftHeader').fadeOut('fast')
