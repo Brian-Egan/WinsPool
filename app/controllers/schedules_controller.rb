@@ -8,13 +8,13 @@ class SchedulesController < ApplicationController
   def index
     if params[:weekNumber]
       if params[:weekNumber] == "All"
-        @schedules = Schedule.all.order("date ASC").all
+        @schedules = Schedule.all.order("date ASC")
       else
         @wkNum = params[:weekNumber]
-        @schedules = Schedule.where(:week => @wkNum)
+        @schedules = Schedule.where(:week => @wkNum).order("date ASC")
       end
     else
-      @schedules = Schedule.all.order("date ASC").all
+      @schedules = Schedule.all.order("date ASC")
     end
   end
 
