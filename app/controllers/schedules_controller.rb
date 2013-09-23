@@ -14,7 +14,8 @@ class SchedulesController < ApplicationController
         @schedules = Schedule.where(:week => @wkNum).order("date ASC")
       end
     else
-      @schedules = Schedule.all.order("date ASC")
+      determineWeekNum(Time.now)
+      @schedules = Schedule.where(:week => @thisWk).order("date ASC")
     end
   end
 

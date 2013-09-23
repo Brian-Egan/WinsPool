@@ -28,8 +28,8 @@
 			%h4{:class => "#{@vTeamText}"} #{@vTeam.city} #{@vTeam.name}
 		- if s.visitor_score.nil?
 			%td.col-md-1.col-xs-1{:id => "Game#{s.id}VScore"}
-				%input.form-control{:id => "vTeam#{s.id}"}
-
+				- if @auth_user.admin?
+					%input.form-control{:id => "vTeam#{s.id}"}
 		- else
 			%td.col-md-1.col-xs-1{:id => "Game#{s.id}VScore"}
 				%h4.text-center #{s.visitor_score}
@@ -37,7 +37,8 @@
 			%h4{:class => "#{@hTeamText}  text-left"} #{@hTeam.city} #{@hTeam.name}
 		- if s.home_score.nil?
 			%td{:class => 'col-md-1 col-xs-1', :id => "Game#{s.id}HScore"}
-				%input.form-control{:id => "hTeam#{s.id}"} 
+				- if @auth_user.admin?
+					%input.form-control{:id => "hTeam#{s.id}"} 
 		- else
 			%td{:id => "Game#{s.id}HScore"} 
 				%h4.text-center #{s.home_score}

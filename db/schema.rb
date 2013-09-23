@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916180717) do
+ActiveRecord::Schema.define(version: 20130923192210) do
 
   create_table "drafts", force: true do |t|
     t.integer  "round"
@@ -94,5 +94,11 @@ ActiveRecord::Schema.define(version: 20130916180717) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "weeks", force: true do |t|
+    t.integer "weekNum"
+    t.date    "start_date"
+    t.date    "end_date"
+  end
 
 end

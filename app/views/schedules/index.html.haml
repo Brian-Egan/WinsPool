@@ -1,6 +1,6 @@
 .row#SchedHead	
 	%h1.col-md-4  Games
-	 
+	- determineWeekNum(Time.now)
 	%div.btn-toolbar.pull-right
 		%h5.col-md-1.col-xs-1.col-sm-1.text-center Week:
 		%div{:class => 'btn-group'}

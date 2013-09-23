@@ -8,7 +8,7 @@
 	- @hTeamText = "text-success"
 	- @vTeamText = "text-danger"
 	- @winner = "home"
-- elsif s.date < Time.now
+- elsif s.date.past?
 	- @vTeamText = "text-warning"
 	- @hTeamText = "text-warning"
 	- @winner = "tbd"
@@ -25,7 +25,8 @@
 	%h4{:class => "#{@vTeamText}"} #{@vTeam.city} #{@vTeam.name}
 - if s.visitor_score.nil?
 	%td.col-md-1.col-xs-1{:id => "Game#{s.id}VScore"}
-		%input.form-control{:id => "vTeam#{s.id}"}
+		- if @auth_user.admin?
+			%input.form-control{:id => "vTeam#{s.id}"}
 - else
 	%td.col-md-1.col-xs-1{:id => "Game#{s.id}VScore"}
 		%h4.text-center #{s.visitor_score}
@@ -45,7 +46,7 @@
 		%td.tableBorderLeft.text-center
 			%button.btn.btn-caution.btn-sm.editGame.tableBorderLeft.text-center.schedGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving...", :'data-winner' => "#{@winner}"} Edit
 - else
-	- if s.date < Time.now
+	- if s.date.past?
 		- if s.winning_team_id.nil?
 			%td.unAuthGame.tableBorderLeft.text-center
 				%button.btn.btn-warning.btn-sm.schedGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving..."} In Progress

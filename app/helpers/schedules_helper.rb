@@ -75,5 +75,20 @@ module SchedulesHelper
 		@hTeam.save
 		puts "Set Team Ties Helper!"
 	end
+
+	def determineWeekNum(time)
+		Week.all.each do |w|
+			if w.start_date.past? && w.end_date.future?
+				@thisWk = w.weekNum
+			end
+		end
+
+		if @thisWk.nil?
+			@thisWk = "Nope"
+		end
+
+		return @thisWk
+	end
+
 end
 
