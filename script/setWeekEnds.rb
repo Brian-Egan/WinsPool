@@ -12,6 +12,7 @@ wkDuration = oneWeek - 1
 				s = Schedule.minimum('id')
 				sc = Schedule.find(s)
 				wk.start_date = (sc.date - ((60*60*60) + oneWeek))
+			end
 		else
 			x = i - 1
 			lastWk = Week.find(x)
