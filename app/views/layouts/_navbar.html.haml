@@ -1,4 +1,4 @@
-%nav.navbar.navbar-inverse{:role => "navigation"}
+%nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
 	/ Brand and toggle get grouped for better mobile display
 	.navbar-header
 		%button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
@@ -11,11 +11,11 @@
 	.collapse.navbar-collapse.navbar-ex1-collapse.navbar-right
 		%ul.nav.navbar-nav
 			%li
-				%a.active{:href => "/standings", :'data-spinner' => ""} Pool Standings
+				%a.active.navbar-link{:href => "/standings", :'data-spinner' => ""} Pool Standings
 			%li
-				%a{:href => "/NFLStandings", :'data-spinner' => ""} NFL Standings
+				%a.navbar-link{:href => "/NFLStandings", :'data-spinner' => ""} NFL Standings
 			%li
-				%a{:href => "/schedules", :'data-spinner' => ""} NFL Schedule
+				%a.navbar-link{:href => "/schedules", :'data-spinner' => ""} NFL Schedule
 			%li.active
-				%a{:href => "/users/#{@auth_user.id}", :'data-spinner' => ""} #{@auth_user.owner}'s Team
+				%a.navbar-link{:href => "/users/#{@auth_user.id}", :'data-spinner' => ""} #{@auth_user.owner}'s Team
 			
