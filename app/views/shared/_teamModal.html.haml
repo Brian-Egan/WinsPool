@@ -18,7 +18,7 @@
 						%h5.text-center  Win %
 				- i = 1
 				- u.teams.each do |t|
-					%tr
+					%tr.NFLTeamSched{:"data-teamid" => "#{t.id}"}
 						%td
 							%h4.text-left #{t.city} #{t.name}
 						%td.text-center

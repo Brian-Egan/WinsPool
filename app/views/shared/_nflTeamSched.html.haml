@@ -1,9 +1,13 @@
 
 .modal-dialog
 	.modal-content
-		.modal-header
+		.modal-header.schedModal
 			%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
-			%h4.modal-title #{t.city} #{t.name} 2013 Schedule
+			%h4.modal-title.col-sm-11.col-xs-11 #{t.city} #{t.name} 2013 Schedule
+			- if t.taken?
+				%h6.modal-title.col-sm-11.col-xs-11 Owner: <span class="i"> #{t.user.owner}
+			- else
+				%h6.modal-title.col-sm-12.col-xs-12 Owner: <span class="i">  Undrafted
 		.modal-body.teamModalBdy
 			%table.table.table-striped.table-condensed.table-bordered
 				%tr
@@ -51,4 +55,3 @@
 						-# 	%h4.text-center #{@wP}
 		.modal-footer.teamModalFt
 			%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-			-# %button.btn.btn-primary{:type => "button"} Save changes

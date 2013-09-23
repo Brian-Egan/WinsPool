@@ -542,3 +542,13 @@ span.trow-info-bs {
 	padding-right: 0px !important;
 }
 
+
+.schedModal {
+	padding-bottom: 10px !important;
+	padding-left: 0px !important;
+	border-bottom: 0px !important;
+}
+
+.modal-body table {
+	margin-bottom: 0px;
+}
