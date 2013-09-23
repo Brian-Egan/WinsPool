@@ -5,15 +5,19 @@
 		- if @vTeam.id == s.winning_team_id
 			- @vTeamText = "text-success"
 			- @hTeamText = "text-danger"
+			- @winner = "visitor"
 		- elsif @hTeam.id == s.winning_team_id
 			- @hTeamText = "text-success"
 			- @vTeamText = "text-danger"
+			- @winner = "home"
 		- elsif s.date < Time.now
 			- @vTeamText = "text-warning"
 			- @hTeamText = "text-warning"
+			- @winner = "tbd"
 		- else
 			- @vTeamText = ""
 			- @hTeamText = ""
+			- @winner = "tbd"
 		-# %td
 		-# 	%h5.text-center{:class => 'centerText'} #{s.week}
 		%td
@@ -23,27 +27,27 @@
 		%td.tableBorderLeft
 			%h4{:class => "#{@vTeamText}"} #{@vTeam.city} #{@vTeam.name}
 		- if s.visitor_score.nil?
-			%td.col-md-1.col-xs-1
+			%td.col-md-1.col-xs-1{:id => "Game#{s.id}VScore"}
 				%input.form-control{:id => "vTeam#{s.id}"}
 
 		- else
-			%td
+			%td.col-md-1.col-xs-1{:id => "Game#{s.id}VScore"}
 				%h4.text-center #{s.visitor_score}
 		%td.tableBorderLeft
 			%h4{:class => "#{@hTeamText}  text-left"} #{@hTeam.city} #{@hTeam.name}
 		- if s.home_score.nil?
-			%td{:class => 'col-md-1 col-xs-1'}
-				%input.form-control{:id => "hTeam#{s.id}"}  
+			%td{:class => 'col-md-1 col-xs-1', :id => "Game#{s.id}HScore"}
+				%input.form-control{:id => "hTeam#{s.id}"} 
 		- else
-			%td 
+			%td{:id => "Game#{s.id}HScore"} 
 				%h4.text-center #{s.home_score}
 		- if @auth_user.admin?
 			- if s.winning_team_id.nil?
 				%td.tableBorderLeft.text-center
-					%button.btn.btn-info.btn-sm.saveGame.tableBorderLeft.text-center.schedGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving..."} Save
+					%button.btn.btn-info.btn-sm.saveGame.tableBorderLeft.text-center.schedGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving...", :'data-winner' => "#{@winner}"} Save
 			- else
 				%td.tableBorderLeft.text-center
-					%button.btn.btn-caution.btn-sm.editGame.tableBorderLeft.text-center.schedGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving..."} Edit
+					%button.btn.btn-caution.btn-sm.editGame.tableBorderLeft.text-center.schedGame{:'data-sid' => "#{s.id}", :'data-vteam' => "#{@vTeam.id}", :'data-hteam' => "#{@hTeam.id}", :"data-loading-text" => "Saving...", :'data-winner' => "#{@winner}"} Edit
 		- else
 			- if s.date < Time.now
 				- if s.winning_team_id.nil?

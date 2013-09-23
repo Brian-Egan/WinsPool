@@ -109,44 +109,74 @@ class SchedulesController < ApplicationController
     @game.home_score = params[:hTeamScore]
     @vScore = params[:vTeamScore].to_i
     @hScore = params[:hTeamScore].to_i
+    @hTeam = Team.find(params[:hTeamID])
+    @vTeam = Team.find(params[:vTeamID])
 
-    if @vScore > @hScore
-      @game.winning_team_id = params[:vTeamID]
-      @wTeam = Team.find(params[:vTeamID])
-      @lTeam = Team.find(params[:hTeamID])
-    elsif @hScore > @vScore
-      @game.winning_team_id = params[:hTeamID]
-      @wTeam = Team.find(params[:hTeamID])
-      @lTeam = Team.find(params[:vTeamID])
-    elsif @hScore == @vScore
-      @game.winning_team_id = nil
-      @tie = true
-      @wTeam = Team.find(params[:hTeamID])
-      @lTeam = Team.find(params[:vTeamID])
+    if params[:winner] == "tbd"
+      if @vScore > @hScore
+        @game.winning_team_id = params[:vTeamID]
+        SetTeamRecords(params[:vTeamID], params[:hTeamID])
+      elsif @hScore > @vScore
+        @game.winning_team_id = params[:hTeamID]
+        SetTeamRecords(params[:hTeamID], params[:vTeamID])
+      elsif @hScore == @vScore
+        @game.winning_team_id = nil
+        @tie = true
+        SetTeamTies(params[:hTeamID], params[:vTeamID])
+      end
+
+      @game.save
+
+
+      puts "================Saving new game================"
+
+    elsif params[:winner] == "home"
+      if @vScore > @hScore
+        @game.winning_team_id = params[:vTeamID]
+        AdjustTeamRecords(params[:hTeamID], params[:vTeamID])
+        SetTeamRecords(params[:vTeamID], params[:hTeamID])
+      elsif @hScore > @vScore
+        @game.save
+      elsif @hScore == @vScore
+        @game.winning_team_id = nil
+        @tie = true
+        SetTeamTies(params[:hTeamID], params[:vTeamID])
+      end
+
+      @game.save
+
+      puts "========Editing Old Game (Old winner was home) ================"
+    
+    elsif params[:winner] == "visitor"
+      if @hScore > @vScore
+        @game.winning_team_id = params[:hTeamID]
+        AdjustTeamRecords(params[:vTeamID], params[:hTeamID])
+        SetTeamRecords(params[:hTeamID], params[:vTeamID])
+      elsif @vScore > @hScore
+        @game.save
+      elsif @hScore == @vScore
+        @game.winning_team_id = nil
+        @tie = true
+        SetTeamTies(params[:vTeamID], params[:hTeamID])
+      end
+  
+      @game.save
+
+       puts "========Editing Old Game (Old winner was VISITOR) ================"
+
     end
 
-    if @tie == true
-      @wTeam.ties += 1
-      @lTeam.ties += 1
-    else
-      @wTeam.wins += 1
-      @lTeam.losses += 1
+
+    if @hTeam.taken == true
+      @hUser = @hTeam.user
+      UpdateUserWLT(@hUser)
+      UpdateWLT(@hUser)
     end
 
-    @game.save
-    @wTeam.save
-    @lTeam.save
-
-    if @wTeam.taken == true
-      @wUser = @wTeam.user
-      UpdateUserWLT(@wUser)
-      UpdateWLT(@wUser)
-    end
-
-    if @lTeam.taken == true
-      @lUser = @lTeam.user
-      UpdateUserWLT(@lUser)
-      UpdateWLT(@lUser)
+    if @vTeam.taken == true
+      @vUser = @vTeam.user
+      UpdateUserWLT(@vUser)
+      UpdateWLT(@vUser)
     end
 
     

@@ -7,17 +7,30 @@ $(document).delegate ".saveGame", "click", ->
   $(this).addClass('disabled')
   $(this).text('Saving...')
   gameNum = $(this).data('sid');
+  winningTeam = $(this).data('winner');
   vTeam = $(this).data('vteam');
   hTeam = $(this).data('hteam');
-  # alert "Game number: " + gameNum
   vInputID = "#vTeam" + gameNum
   hInputID = "#hTeam" + gameNum
   vScore = $(vInputID).val()
   hScore = $(hInputID).val()
-  console.log "Visitor: " + vScore + " || Home: " + hScore
-  subMit = {utf: "✓", id: gameNum, vTeamID: vTeam, vTeamScore: vScore, hTeamID: hTeam, hTeamScore: hScore, gameID: gameNum}
+  subMit = {utf: "✓", id: gameNum, vTeamID: vTeam, vTeamScore: vScore, hTeamID: hTeam, hTeamScore: hScore, gameID: gameNum, winner: winningTeam }
   $.get('/schedule/updateScore', subMit, null, "script")
 
+ $(document).delegate ".editGame", "click", ->
+  $(this).removeClass('editGame')
+  $(this).addClass('saveGame')
+  $(this).addClass('btn-success')
+  $(this).text('Save')
+  gameNum = $(this).data('sid'); 
+  hScoreInput = "#Game" + gameNum + "HScore"
+  vScoreInput = "#Game" + gameNum + "VScore"
+  $(hScoreInput).empty()
+  $(vScoreInput).empty()
+  hTeam = "hTeam" + gameNum
+  vTeam = "vTeam" + gameNum
+  $(hScoreInput).html("<input class='form-control' id=" + hTeam + "></input>")
+  $(vScoreInput).html("<input class='form-control' id=" + vTeam + "></input>")
 
 $(document).delegate ".wkBtn", "click", ->
   WeekNum = $(this).data('wk');
