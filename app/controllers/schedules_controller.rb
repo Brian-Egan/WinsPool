@@ -15,7 +15,11 @@ class SchedulesController < ApplicationController
       end
     else
       determineWeekNum(Time.now)
-      @schedules = Schedule.where(:week => @thisWk).order("date ASC")
+      if @thisWk == "Nope"
+        @schedules = Schedule.all.order("date ASC")
+      else
+        @schedules = Schedule.where(:week => @thisWk).order("date ASC")
+      end
     end
   end
 
