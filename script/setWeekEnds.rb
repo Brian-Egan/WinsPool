@@ -6,7 +6,7 @@ wkDuration = oneWeek - 1
 		wk = Week.new
 		wk.weekNum = i
 		if i == 1
-			if Schedule.find(1).exists?
+			if Schedule.exists?(i)
 				wk.start_date = (Schedule.find(1).date - (60*60*60))
 			else
 				s = Schedule.minimum('id')
