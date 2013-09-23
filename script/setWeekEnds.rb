@@ -1,4 +1,7 @@
 numWks = Week.maximum('id')
+if numWks.nil?
+	numWks = 0
+end
 i = 1
 oneWeek = (7*24*60*60)
 wkDuration = oneWeek - 1
