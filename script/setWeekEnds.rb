@@ -1,14 +1,11 @@
-numWks = Week.maximum('id')
-if numWks.nil?
-	numWks = 0
-end
+numWks = 17
 i = 1
 oneWeek = (7*24*60*60)
 wkDuration = oneWeek - 1
-numWks += 1
 	while i < numWks
-		wk = Week.find(i)
-		if wk.id == 1
+		wk = Week.new
+		wk.weekNum = i
+		if i == 1
 			wk.start_date = (Schedule.find(1).date - (60*60*60))
 		else
 			x = i - 1

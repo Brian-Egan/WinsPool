@@ -6,13 +6,16 @@
 		%div{:class => 'btn-group'}
 			- @y = Schedule.minimum('week')
 			- while @y <= Schedule.maximum('week')
-				%button{:class => 'btn btn-sm btn-default wkBtn', :'data-wk' => @y, :id => "Week#{@y}"} #{@y}
+				-if @y == @thisWk
+					%button{:class => 'btn btn-sm btn-default wkBtn active', :'data-wk' => @y, :id => "Week#{@y}"} #{@y}
+				- else
+					%button{:class => 'btn btn-sm btn-default wkBtn', :'data-wk' => @y, :id => "Week#{@y}"} #{@y}
 				- @y += 1
 		%div{:class => 'btn-group'}
 			%button{:class => 'btn btn-sm  btn-info wkBtn', :'data-wk' => 'All', :id => 'All'} Show All
 			%div{:class => 'btn-toolbar'}
 
-%div.col-md-10.col-xs-12.schedTable
+%div.col-md-11.col-xs-12.schedTable
 	%table{:class => 'table table-striped table-hover'}
 		%thead
 			%tr
