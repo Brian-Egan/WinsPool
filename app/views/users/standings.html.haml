@@ -10,7 +10,10 @@
 		%table{:class => 'table table-striped table-hover standingsTable'}
 			%tr
 				%th.col-md-1.col-sm-1.col-xs-1.text-left
-					%h5.text-left Rank
+					%h5.text-left 
+						Rank
+						%small.xxsmall-text.vertical-align-super
+							Change
 				%th.col-md-4.col-md-offset-1.col-sm-2.col-xs-2.text-left
 					%h5.text-left Player
 				%th.col-md-1.col-sm-1.col-xs-1.text-center
@@ -31,13 +34,19 @@
 					- @highlight = ""
 				%tr.playerTeam{:"data-userid" => "#{u.id}", :class => @highlight }
 					%td.text-center
-						%h4.text-left #{i}
+						%h4.text-left
+							#{i}
+							= getRankingChange(u)
 					%td.text-left
 						%h4.text-left #{u.owner}
 					%td.text-center
-						%h4.text-center #{u.wins}
+						%h4.text-center
+							#{u.wins}
+							= getWinsChange(u)
 					%td.text-center
-						%h4.text-center #{u.losses}
+						%h4.text-center
+							#{u.losses}
+							= getLossesChange(u)
 					%td.text-center
 						%h4.text-center #{u.ties}
 					- getUserWinPercent(u.wins, u.losses, u.ties)
@@ -45,11 +54,13 @@
 						%h4.text-center #{@wP}
 					- if u == @users[0]
 						%td.text-center
-							%h4 ---
+							%h4 --- #{getGamesBackChange(u)}
 					- else
-						- @gb = @users[0].wins - u.wins
+						
 						%td.text-center
-							%h4 #{@gb}
+							%h4 
+								#{u.wins_record.games_back}
+								= getGamesBackChange(u)
 				- i += 1
 					
 

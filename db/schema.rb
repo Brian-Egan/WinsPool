@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113180547) do
+ActiveRecord::Schema.define(version: 20131113192723) do
 
   create_table "drafts", force: true do |t|
     t.integer  "round"
@@ -115,6 +115,9 @@ ActiveRecord::Schema.define(version: 20131113180547) do
     t.decimal  "last_wk_win_percentage"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "games_back",                default: 0
+    t.integer  "current_wk_games_back",     default: 0
+    t.integer  "last_wk_games_back",        default: 0
   end
 
 end

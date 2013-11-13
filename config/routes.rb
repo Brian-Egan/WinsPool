@@ -37,6 +37,9 @@ WinsPool::Application.routes.draw do
   match '/NFLTeamSched' => 'schedules#NFLTeamSched', :via => :get
 
 
+  match '/setNewWeek' => 'users#setNewWeek', :via => :post
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

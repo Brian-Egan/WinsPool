@@ -1,0 +1,1 @@
+$('#SetNewWeek').text "Complete!"

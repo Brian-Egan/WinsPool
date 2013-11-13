@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  include UsersHelper
 
   # GET /users
   # GET /users.json
@@ -87,6 +88,17 @@ class UsersController < ApplicationController
       format.html
       format.js
     end
+  end
+
+
+  def setNewWeek
+
+    puts "~~~~hey!~~~~~~"
+    @rankings = User.all.sort_by{|x| [x.wins, -x.losses]}.reverse
+    setUsersForNewWeek(@rankings)
+    # render nothing: true
+    render file: 'users/setNewWeek.js.coffee'
+
   end
   
 

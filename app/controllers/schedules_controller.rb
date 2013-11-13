@@ -184,7 +184,7 @@ class SchedulesController < ApplicationController
       UpdateWLT(@vUser)
     end
 
-    
+    updateUserRankings(User.all)
     
 
     @schedules = Schedule.all
