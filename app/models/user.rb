@@ -4,7 +4,13 @@ has_many :teams, :through => :drafts
 
 has_many :drafts
 
+has_one :wins_record
+
 has_secure_password
+
+def self.by_rank
+	self.all.sort_by{|x| [x.wins_record.ranking]} 
+end
 
 scope :teamWins, joins(:teams).order('teams.wins DESC')
 

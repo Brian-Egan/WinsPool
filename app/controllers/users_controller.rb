@@ -81,9 +81,8 @@ class UsersController < ApplicationController
   end
 
   def standings
-      @users = User.all.order('wins DESC')
+      @users = User.by_rank
       @updatedAt = Schedule.maximum('updated_at')
-
     respond_to do |format|
       format.html
       format.js

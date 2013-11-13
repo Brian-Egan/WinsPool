@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923192210) do
+ActiveRecord::Schema.define(version: 20131113180547) do
 
   create_table "drafts", force: true do |t|
     t.integer  "round"
@@ -96,9 +96,25 @@ ActiveRecord::Schema.define(version: 20130923192210) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "weeks", force: true do |t|
-    t.integer "weekNum"
-    t.date    "start_date"
-    t.date    "end_date"
+    t.integer  "weekNum"
+    t.datetime "start_date"
+    t.datetime "end_date"
+  end
+
+  create_table "wins_records", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "ranking"
+    t.decimal  "win_percentage"
+    t.integer  "current_wk_ranking"
+    t.integer  "current_wk_wins"
+    t.integer  "current_wk_losses"
+    t.decimal  "current_wk_win_percentage"
+    t.integer  "last_wk_ranking"
+    t.integer  "last_wk_wins"
+    t.integer  "last_wk_losses"
+    t.decimal  "last_wk_win_percentage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
