@@ -23,6 +23,12 @@
 			-# %p Auth user is #{@auth_user.owner}, ID: #{@auth_user.id}
 			.myBody
 				= yield
+
+				= render 'layouts/bkSpinner'
+
+				#TeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
+
+				#NFLTeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
 		- else
 			-# %h1.ui-title TitlePool
 			=render 'layouts/navbarSignUp'
@@ -37,26 +43,18 @@
 						- flash.discard(k)
 			.myLogin
 				= yield
-		-# #alertSpace
-		-# 	- flash.each do |k, v|
-		-# 		- if v != nil
-		-# 			- formatAlerts(k, v)
-		-# 			%div{:class => @class, :id => k}
-		-# 				%button.close{"data-dismiss" => "alert", :type => "button"} &times;
-		-# 				%p= raw v
-		-# 			- flash.discard(k)
-			-# - if notice || alert
-			-# 	%p.notice #{notice}
-			-# 	%p.alert #{alert}
-			-# %p.alert-info #{params.inspect}
-			
-		-# = yield
+
+				= render 'layouts/bkSpinner'
+
+				#TeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
+
+				#NFLTeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
 
 		%br
 
-		= render 'layouts/bkSpinner'
+		-# = render 'layouts/bkSpinner'
 
-		#TeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
+		-# #TeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
 
-		#NFLTeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
+		-# #NFLTeamModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "PlayerModalLabel", :role => "dialog", :tabindex => "-1"}
 	
