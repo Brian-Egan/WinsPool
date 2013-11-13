@@ -1,0 +1,409 @@
+
+
+
+
+/* ======================= DIV Helpers  ====================================
+================================================================================*/
+
+	.clearBoth {
+		clear: both !important;
+	}
+
+	.clearNone {
+		clear: none !important;
+	}
+
+
+	.block {
+		display: block !important;
+	}
+
+	.inline-block {
+		display: inline-block !important;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	.superIcon {
+		vertical-align: super;
+	}
+
+	.centerImg {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+/* ----------------------------END DIV Helpers-------------------------*/
+
+/* ======================= Text Helpers  ====================================
+================================================================================*/
+
+	.i {
+		font-style: italic;
+	}
+
+	.b {
+		font-weight: bold;
+	}
+
+	.small-text {
+		font-size: small;
+	}
+
+	.xsmall-text {
+		font-size: x-small;
+	}
+
+	.xxsmall-text {
+		font-size: xx-small;
+	}
+
+	.center-text {
+		text-align: center;
+	}
+
+	.grey-text {
+		color: grey;
+	}
+
+	.red-text {
+		color: red;
+	}
+
+	.blue-text {
+		color: blue;
+	}
+
+	.green-text {
+		color: green;
+	}
+
+	.black-text {
+		color: black;
+	}
+
+/* ----------------------------END Text Helpers-------------------------*/
+
+/*##=======================MARGINS & PADDING=============================
+##===================================================================*/
+
+	/* ~~~~~~~~~~~~~~~~~~~~~~~ Zeros ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+		.margin-0 {
+		margin: 0px !important;
+		}
+
+
+		.padding-0 {
+			padding: 0px !important;
+		}
+
+		.margin-padding-0 {
+			margin: 0px !important;
+			padding: 0px !important;
+		}
+
+		.margin-padding-horizontal-0 {
+			margin-left: 0px !important;
+			padding-left: 0px !important;
+			margin-right: 0px !important;
+			padding-right: 0px !important;
+		}
+
+	/*~~~~~~~~~~~~~~~~~~~~~~~~~~End Zeros~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+	.margin-padding-horizontal-0 {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+
+
+/*##====MARGINS===========*/
+
+
+
+
+	.margin-top-0 {
+		margin-top: 0px !important;
+	}
+
+	.margin-top-5 {
+		margin-top: 5px !important;
+	}
+
+	.margin-top-10 {
+		margin-top: 10px !important;
+	}
+
+	.margin-top-15 {
+		margin-top: 15px !important;
+	}
+
+	.margin-top-20 {
+		margin-top: 20px !important;
+	}
+
+	/*##====*/
+
+	.margin-left-0 {
+		margin-left: 0px !important;
+	}
+
+	.margin-left-5 {
+		margin-left: 5px !important;
+	}
+
+	.margin-left-10 {
+		margin-left: 10px !important;
+	}
+
+	.margin-left-15 {
+		margin-left: 15px !important;
+	}
+
+	.margin-left-20 {
+		margin-left: 20px !important;
+	}
+
+	/*##====*/
+
+	.margin-bottom-0 {
+		margin-bottom: 0px !important;
+	}
+
+	.margin-bottom-5 {
+		margin-bottom: 5px !important;
+	}
+
+	.margin-bottom-10 {
+		margin-bottom: 10px !important;
+	}
+
+	.margin-bottom-15 {
+		margin-bottom: 15px !important;
+	}
+
+	.margin-bottom-20 {
+		margin-bottom: 20px !important;
+	}
+
+	/*##====*/
+
+	.margin-right-0 {
+		margin-right: 0px !important;
+	}
+
+	.margin-right-5 {
+		margin-right: 5px !important;
+	}
+
+	.margin-right-10 {
+		margin-right: 10px !important;
+	}
+
+	.margin-right-15 {
+		margin-right: 15px !important;
+	}
+
+	.margin-right-20 {
+		margin-right: 20px !important;
+	}
+
+/*##====END MARGIN===========*/
+
+
+/*##====paddingS===========*/
+
+	.padding-0 {
+		margin: 0px !important;
+	}
+
+	.padding-top-0 {
+		padding-top: 0px !important;
+	}
+
+	.padding-top-5 {
+		padding-top: 5px !important;
+	}
+
+	.padding-top-10 {
+		padding-top: 10px !important;
+	}
+
+	.padding-top-15 {
+		padding-top: 15px !important;
+	}
+
+	.padding-top-20 {
+		padding-top: 20px !important;
+	}
+
+	/*##====*/
+
+	.padding-left-0 {
+		padding-left: 0px !important;
+	}
+
+	.padding-left-5 {
+		padding-left: 5px !important;
+	}
+
+	.padding-left-10 {
+		padding-left: 10px !important;
+	}
+
+	.padding-left-15 {
+		padding-left: 15px !important;
+	}
+
+	.padding-left-20 {
+		padding-left: 20px !important;
+	}
+
+	/*##====*/
+	.padding-bottom-0 {
+		padding-bottom: 0px !important;
+	}
+
+	.padding-bottom-5 {
+		padding-bottom: 5px !important;
+	}
+
+	.padding-bottom-10 {
+		padding-bottom: 10px !important;
+	}
+
+	.padding-bottom-15 {
+		padding-bottom: 15px !important;
+	}
+
+	.padding-bottom-20 {
+		padding-bottom: 20px !important;
+	}
+
+	/*##====*/
+
+	.padding-right-0 {
+		padding-right: 0px !important;
+	}
+
+	.padding-right-5 {
+		padding-right: 5px !important;
+	}
+
+	.padding-right-10 {
+		padding-right: 10px !important;
+	}
+
+	.padding-right-15 {
+		padding-right: 15px !important;
+	}
+
+	.padding-right-20 {
+		padding-right: 20px !important;
+	}
+
+/*##====END padding===========*/
+
+
+/*##=======================VERTICAL ALIGN=============================
+##===================================================================*/
+
+	.vertical-align-middle {
+		vertical-align: middle !important;
+	}
+
+	.vertical-align-top {
+		vertical-align: top !important;
+	}
+
+	.vertical-align-bottom {
+		vertical-align: bottom !important;
+	}
+
+	.vertical-align-super {
+		vertical-align: super !important;
+	}
+
+	.vertical-align-text-top {
+		vertical-align: text-top; !important;
+	}
+
+	.vertical-align-text-bottom {
+		vertical-align: text-bottom; !important;
+	}
+
+/*##=======================TEXT=============================
+##===================================================================*/
+
+	.text-danger {
+	 color: #d94f79 !important;
+	}
+
+	.text-black {
+		color: black !important;
+	}
+
+
+/*##=======================OPACITY=============================
+##===================================================================*/
+
+	.opacity90 {
+		opacity: .9 !important;
+	}
+
+	.opacity80 {
+		opacity: .8 !important;
+	}
+
+	.opacity70 {
+		opacity: .7 !important;
+	}
+
+	.opacity60 {
+		opacity: .6 !important;
+	}
+
+	.opacity50 {
+		opacity: .5 !important;
+	}
+
+	.opacity40 {
+		opacity: .4 !important;
+	}
+
+	.opacity30 {
+		opacity: .3 !important;
+	}
+
+	.opacity20 {
+		opacity: .2 !important;
+	}
+
+	.opacity10 {
+		opacity: .1 !important;
+	}
+
+
+/*##=======================BORDERS=============================
+##===================================================================*/
+
+	.border-none {
+		border: none !important;
+	}
+
+/* ======================= Containers  ====================================
+================================================================================*/
+
+	.container-grey {
+		background: rgba(255,255,255,.6);
+	}
+
+/* ----------------------------END Containers-------------------------*/

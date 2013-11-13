@@ -12,6 +12,8 @@ group :development, :test do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
   gem 'rb-fsevent',       require: false
+   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
@@ -67,6 +69,8 @@ gem 'will_paginate', '~> 3.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'gon'
+
+  gem 'fastclick-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

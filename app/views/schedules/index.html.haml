@@ -1,4 +1,4 @@
-.row#SchedHead	
+.row#SchedHead.jumbotron.headerJumbo.row	
 	%h1.col-md-4  Games
 	- determineWeekNum(Time.now)
 	%div.btn-toolbar.pull-right
@@ -15,8 +15,8 @@
 			%button{:class => 'btn btn-sm  btn-info wkBtn', :'data-wk' => 'All', :id => 'All'} Show All
 			%div{:class => 'btn-toolbar'}
 
-%div.col-md-11.col-xs-12.schedTable
-	%table{:class => 'table table-striped table-hover'}
+%div.col-md-11.col-xs-12.schedTable.contentTable
+	%table.table.table-striped.table-hover.col-md-12.col-xs-12.col-sm-12.margin-left-0.padding-left-0
 		%thead
 			%tr
 				-# %th.col-md-1.col-xs-1

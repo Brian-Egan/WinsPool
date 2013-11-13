@@ -15,8 +15,17 @@
 
 body {
 	padding-top: 60px;
+	background-image: url(image_path('Football_GridBG-60.jpg'));
 }
 
+
+.contentTable {
+	background: rgba(245,245,245,.8);
+	margin-left: 1em;
+	margin-right: 1em !important;
+	padding-left: 1em !important;
+	padding-right: 1em !important;
+}
 
 .ffBody {
 	padding: auto;
@@ -556,3 +565,10 @@ span.trow-info-bs {
 .modal-body table {
 	margin-bottom: 0px;
 }
+
+
+	/* ~~~~~~~~~~~~~~~~~~~~~~~ NFL Schedule ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	/*#User*/
+
+
+	/*~~~~~~~~~~~~~~~~~~~~~~~~~~End NFL Schedule~~~~~~~~~~~~~~~~~~~~~~~ */
