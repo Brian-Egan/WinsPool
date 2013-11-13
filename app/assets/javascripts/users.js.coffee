@@ -4,6 +4,7 @@
 
 $(document).delegate ".playerTeam", "click", ->
 	teamNum = $(this).data('userid');
+	console.log "Calling Teams"
 	# alert teamNum
 	subMit = {utf: "✓", userID: teamNum}
 	$.get('/usermodal', subMit, null, 'script')
