@@ -44,8 +44,8 @@
 # //     glow.toggleClass('glow');
 # // }, 1000);
 
-$ ->
-  new FastClick(document.body)
+# $ ->
+#   new FastClick(document.body)
 
 document.addEventListener "page:fetch", console.log("yo dog, page fetching!")
 document.addEventListener "page:receive", console.log("yo dog, page RECIEVING!")
